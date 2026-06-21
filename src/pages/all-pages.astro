@@ -1,0 +1,47 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { styles } from '../data/styles.js';
+import { sourceTypes, sourceById } from '../data/sourceTypes.js';
+import { guides } from '../lib/guides.js';
+
+const title = 'All Pages - Citation Generator Sitemap';
+const description = 'Browse every citation generator, source-type guide and article on citationgenerator.store.';
+---
+<Base title={title} description={description}>
+  <div class="mx-auto max-w-4xl px-4 py-8">
+    <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'All pages' }]} />
+    <h1 class="text-3xl font-bold tracking-tight mb-6">All pages</h1>
+
+    <h2 class="text-xl font-bold mt-6 mb-2">Citation generators by style</h2>
+    <ul class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 text-sm">
+      {styles.map((s) => <li><a href={`/${s.slug}`} class="text-[var(--color-brand)] hover:underline">{s.labelLong}</a></li>)}
+    </ul>
+
+    {styles.map((s) => (
+      <section class="mt-6">
+        <h2 class="text-lg font-bold mb-2">Cite a source in {s.label}</h2>
+        <ul class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 text-sm">
+          {s.sourceTypeIds.map((sid) => (
+            <li><a href={`/how-to-cite-${sourceById[sid].slugFragment}-in-${s.id}`} class="text-[var(--color-brand)] hover:underline">Cite {sourceById[sid].label.toLowerCase()} in {s.label}</a></li>
+          ))}
+        </ul>
+      </section>
+    ))}
+
+    <h2 class="text-xl font-bold mt-8 mb-2">Guides</h2>
+    <ul class="grid sm:grid-cols-2 gap-x-6 text-sm">
+      {guides.map((g) => <li><a href={`/guides/${g.slug}`} class="text-[var(--color-brand)] hover:underline">{g.h1 || g.title}</a></li>)}
+    </ul>
+
+    <h2 class="text-xl font-bold mt-8 mb-2">Tools and hubs</h2>
+    <ul class="grid sm:grid-cols-2 gap-x-6 text-sm">
+      <li><a href="/citation-generators" class="text-[var(--color-brand)] hover:underline">All citation styles</a></li>
+      <li><a href="/how-to-cite" class="text-[var(--color-brand)] hover:underline">How to cite any source</a></li>
+      <li><a href="/tools" class="text-[var(--color-brand)] hover:underline">Free citation tools</a></li>
+      <li><a href="/bibliography-builder" class="text-[var(--color-brand)] hover:underline">Bibliography builder</a></li>
+      <li><a href="/in-text-citation-generator" class="text-[var(--color-brand)] hover:underline">In-text citation generator</a></li>
+      <li><a href="/about" class="text-[var(--color-brand)] hover:underline">How citations are generated</a></li>
+    </ul>
+  </div>
+</Base>

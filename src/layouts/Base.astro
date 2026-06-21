@@ -6,11 +6,24 @@ interface Props {
   description: string;
   canonical?: string;
   jsonld?: object[];
+  noindex?: boolean;
 }
 
-const { title, description, canonical, jsonld = [] } = Astro.props;
+const { title, description, canonical, jsonld = [], noindex = false } = Astro.props;
 const canonicalUrl = canonical ?? new URL(Astro.url.pathname, Astro.site).href;
+const ogImage = new URL('/og-default.png', Astro.site).href;
 const year = 2026; // build-time constant; never rendered into slugs
+
+// Sitewide Organization entity for E-E-A-T. Built on the open CSL standard; no fabricated author.
+const orgSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Citation Generator',
+  url: 'https://citationgenerator.store',
+  logo: 'https://citationgenerator.store/favicon.svg',
+  description: 'Free citation generator that formats accurate references in every major style using the open Citation Style Language standard.',
+  knowsAbout: ['citation styles', 'academic referencing', 'bibliographies', 'Citation Style Language'],
+};
 ---
 
 <!doctype html>
@@ -21,12 +34,16 @@ const year = 2026; // build-time constant; never rendered into slugs
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
     <link rel="canonical" href={canonicalUrl} />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl} />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={ogImage} />
+    <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
     {jsonld.map((block) => (
       <script type="application/ld+json" set:html={JSON.stringify(block)} />
     ))}
@@ -56,6 +73,7 @@ const year = 2026; // build-time constant; never rendered into slugs
           <a href="/how-to-cite" class="hover:text-[var(--color-brand)]">Citation guides</a>
           <a href="/tools" class="hover:text-[var(--color-brand)]">Free tools</a>
           <a href="/about" class="hover:text-[var(--color-brand)]">How citations are generated</a>
+          <a href="/all-pages" class="hover:text-[var(--color-brand)]">All pages</a>
         </div>
         <p>Free citation generator. Accurate references in every major style, built on open Citation Style Language standards. No sign up.</p>
         <p class="mt-2">&copy; {year} citationgenerator.store</p>
