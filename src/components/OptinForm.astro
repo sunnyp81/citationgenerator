@@ -1,16 +1,25 @@
 ---
-// Email capture for a per-style cheat-sheet PDF. Posts to the EmailIt worker (endpoint
-// wired post-launch). magnet identifies which PDF to deliver.
+// Email capture for a per-style cheat-sheet PDF. Posts to the emailit-worker (set
+// OPTIN_ENDPOINT in src/config/site.js). magnet identifies which PDF to deliver.
+import { OPTIN_ENDPOINT } from '../config/site.js';
 interface Props { magnet: string; label?: string; }
 const { magnet, label = 'Get the free citation cheat sheet' } = Astro.props;
 ---
 <aside class="my-8 rounded-xl bg-[var(--color-ink)] text-white p-6">
   <h2 class="text-xl font-bold mb-1">{label}</h2>
   <p class="text-sm text-slate-300 mb-4">A one page quick reference you can keep beside your work. No spam, unsubscribe any time.</p>
-  <form class="flex flex-wrap gap-2" data-optin action="https://emailit.sunnypatel.co.uk/subscribe" method="post">
+  <form class="flex flex-wrap gap-2" data-optin action={OPTIN_ENDPOINT} method="post">
     <input type="hidden" name="magnet" value={magnet} />
+    <input type="hidden" name="_site" value="citationgenerator.store" />
+    <!-- honeypot: real users never see or fill this -->
+    <input type="text" name="url" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
     <input type="email" name="email" required placeholder="you@university.edu"
       class="flex-1 min-w-[200px] rounded px-3 py-2 text-[var(--color-ink)] text-sm" />
-    <button type="submit" class="bg-[var(--color-accent)] text-white px-4 py-2 rounded text-sm font-medium hover:opacity-90">Send it to me</button>
+    <button type="submit" class="bg-[var(--color-accent)] text-white px-4 py-2 rounded text-sm font-medium hover:opacity-90 disabled:opacity-60">Send it to me</button>
   </form>
+  <p data-optin-status role="status" aria-live="polite" class="text-sm text-slate-300 mt-2 min-h-[1.25rem]"></p>
 </aside>
+
+<script>
+  import '../scripts/optin.js';
+</script>
