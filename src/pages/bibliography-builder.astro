@@ -1,0 +1,47 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CitationTool from '../components/CitationTool.astro';
+import BibliographyPanel from '../components/BibliographyPanel.astro';
+import AffiliateCTA from '../components/AffiliateCTA.astro';
+import AdSlot from '../components/AdSlot.astro';
+import FAQ from '../components/FAQ.astro';
+import { styles } from '../data/styles.js';
+
+const title = 'Bibliography Builder - Free Works Cited and Reference List Maker';
+const description = 'Build a full bibliography, works cited or reference list in any citation style. Add sources, export BibTeX, copy the whole list. Free, no sign up.';
+const jsonld = [
+  { '@context': 'https://schema.org', '@type': 'SoftwareApplication', name: 'Bibliography Builder', applicationCategory: 'BrowserApplication', operatingSystem: 'Any', offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' } },
+];
+const faq = [
+  { q: 'How do I build a bibliography?', a: 'Generate each citation in your chosen style and select Add to bibliography. Your list builds below and you can copy it all or export it as BibTeX.' },
+  { q: 'Is my bibliography saved?', a: 'Yes, in your own browser. Come back later on the same device and it is still there. Nothing is uploaded.' },
+  { q: 'Which styles can I build a bibliography in?', a: `Every style on the site: ${styles.map((s) => s.label).join(', ')}.` },
+];
+---
+<Base title={title} description={description} jsonld={jsonld}>
+  <div class="mx-auto max-w-3xl px-4 py-8">
+    <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Tools', href: '/tools' }, { label: 'Bibliography Builder' }]} />
+    <h1 class="text-3xl font-bold tracking-tight">Bibliography Builder</h1>
+    <p class="text-lg text-[var(--color-muted)] mt-2 mb-6">Add every source you used and build a full reference list or works cited page in any style. Export when you are done.</p>
+
+    <CitationTool defaultStyleId="ama" />
+    <BibliographyPanel />
+    <AffiliateCTA variant="post-action" />
+
+    <section class="prose-cg mt-8">
+      <h2>How to use the bibliography builder</h2>
+      <ol>
+        <li>Choose your citation style and source type.</li>
+        <li>Generate the citation, then select Add to bibliography.</li>
+        <li>Repeat for every source. Copy the whole list or export BibTeX.</li>
+      </ol>
+      <h2>Supported citation styles</h2>
+      <p>The builder works with every style on the site, so your whole list stays in one consistent format.</p>
+    </section>
+
+    <AdSlot slot="mid-content" />
+    <FAQ items={faq} heading="Bibliography builder FAQ" />
+    <AdSlot slot="footer" />
+  </div>
+</Base>

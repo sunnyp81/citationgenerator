@@ -1,0 +1,427 @@
+keyword	volume	cpc	kd	traffic_potential	intent	parent
+ama citation generator	21000	2.5	6	44000	Informational,Non-branded,Non-local	ama citation generator
+chicago citation generator	19000	0.15	10	83000	Informational,Non-branded,Non-local	chicago citation generator
+chicago style citation generator	13000	0.1	10	83000	Informational,Non-branded,Non-local	chicago citation generator
+ieee citation generator	12000	0.09	4	16000	Informational,Branded,Non-local	ieee citation
+acs citation generator	11000	0.1	2	20000	Informational,Non-branded,Non-local	acs citation generator
+turabian citation generator	6100	1.5	2	11000	Informational,Non-branded,Non-local	turabian citation generator
+cse citation generator	5900	0.15	1	8400	Informational,Branded,Non-local	cse citation generator
+asa citation generator	4400	0.09	4	8400	Informational,Non-branded,Non-local	asa citation generator
+bluebook citation generator	3900	2.0	7	5100	Informational,Branded,Non-local	bluebook citation generator
+chicago manual of style citation generator	2500	0.5	7	83000	Informational,Branded,Non-local	chicago citation generator
+image citation generator	2200	0.5	29	12000	Informational,Non-branded,Non-local	how to cite an image
+quillbot citation generator	1500	0.25	39	15000	Informational,Navigational,Branded,Non-local	quillbot citation generator
+mla 8 citation generator	1400	0.02	29	2100	Informational,Branded,Non-local	mla 8 citation generator
+apsa citation generator	1300	1.0	0	2000	Informational,Branded,Non-local	apsa citation generator
+in-text citation generator	1100	1.2	0	93000	Informational,Non-branded,Non-local	references
+bibtex citation generator	1000	0.08	33	2800	Informational,Non-branded,Non-local	bibtex citation generator
+harvard citation generator	1000	2.0	17	6100	Informational,Non-branded,Non-local	harvard referencing
+nlm citation generator	900	2.0	0	1500	Informational,Branded,Non-local	nlm citation generator
+purdue owl citation generator	900	1.0	13	17000	Informational,Navigational,Branded,Non-local	purdue owl citation
+citation generator ama	700	2.5	16	44000	Informational,Branded,Non-local	ama citation generator
+chicago manual style citation generator	700	0.3	17	91000	Informational,Branded,Non-local	chicago citation generator
+vancouver citation generator	700	1.8	3	2400	Informational,Non-branded,Non-local	vancouver style citation
+chicago turabian citation generator	600	0.15	4	10000	Informational,Non-branded,Local	turabian citation generator
+asme citation generator	500	1.5	0	200	Informational,Branded,Non-local	asme citation generator
+cms citation generator	500	0.3	17	89000	Informational,Non-branded,Non-local	chicago citation generator
+free chicago citation generator	500	0.09	20	19000	Informational,Non-branded,Non-local	chicago style citation
+aiaa citation generator	400	2.5	0	250	Informational,Branded,Non-local	aiaa reference format
+scientific citation generator	400	0.45	35	8400	Informational,Non-branded,Non-local	cse citation generator
+apa image citation generator	350	0.08	14	11000	Informational,Non-branded,Non-local	how to cite a picture
+legal citation generator	350	1.7	23	5100	Informational,Non-branded,Non-local	bluebook citation generator
+mybib free citation generator	350	0.06	1	682000	Informational,Navigational,Branded,Non-local	citation generator
+asm citation generator	350	1.8	0	500	Informational,Branded,Non-local	asm citation generator
+mla image citation generator	350	0.02	34	2600	Informational,Branded,Non-local	image citation generator
+asce citation generator	300	3.5	0	400	Informational,Branded,Non-local	asce citation machine
+chicago footnote citation generator	300	1.6	7	78000	Informational,Non-branded,Local	chicago citation generator
+chicago author date citation generator	300	0.15	6	350	Informational,Non-branded,Non-local	chicago author date citation
+acs style citation generator	300	2.0	2	20000	Informational,Branded,Non-local	acs citation generator
+acm citation generator	300	3.5	0	200	Informational,Branded,Non-local	acm citation
+mla book citation generator	250	0.02	25	6400	Informational,Non-branded,Non-local	mla book citation
+harvard style citation generator	250	2.0	15	6200	Informational,Non-branded,Non-local	harvard referencing
+citation generator ieee	250	0.09	4	16000	Informational,Branded,Non-local	ieee citation
+ap citation generator	250	0.01	0	10	Informational,Branded,Non-local	ap style citation generator
+chicago manual citation generator	250	0.3	7	90000	Informational,Branded,Non-local	chicago citation generator
+vancouver style citation generator	250	1.8	3	2400	Informational,Non-branded,Non-local	vancouver style citation
+mla8 citation generator	250	0.02	28	3000	Informational,Non-branded,Non-local	mla 8 citation generator
+ama format citation generator	250	2.5	8	32000	Informational,Branded,Non-local	ama citation generator
+song citation generator	250	1.2	17	300	Informational,Non-branded,Non-local	mla song citation generator
+poem citation generator	200	1.8	6	800	Informational,Non-branded,Non-local	how to cite a poem
+movie citation generator	200	1.1	10	2100	Informational,Non-branded,Non-local	how to cite a movie
+pubmed citation generator	200	2.5	4	200	Informational,Branded,Non-local	pubmed citation generator
+gsa citation generator	200	3.5	0	200	Informational,Branded,Non-local	gsa citation generator
+ecology citation generator	200	0.04	0	100	Informational,Non-branded,Non-local	ecology citation generator
+picture citation generator	200	1.9	29	12000	Informational,Non-branded,Non-local	how to cite an image
+free ama citation generator	200	2.5	9	32000	Informational,Non-branded,Non-local	ama citation generator
+turabian style citation generator	200	2.0	2	9900	Informational,Non-branded,Non-local	turabian citation generator
+saa citation generator	200	2.0	0	100	Informational,Non-branded,Non-local	saa citation generator
+mla 8th edition citation generator	200	0.04	27	2400	Informational,Branded,Non-local	mla 8 citation
+chicago citation generator free	150	0.2	11	22000	Informational,Non-branded,Non-local	chicago style citation
+aaa citation generator	150	0.8	0	350	Informational,Branded,Non-local	aaa citation
+american political science association citation generator	150	3.0	0	2900	Informational,Branded,Non-local	apsa citation generator
+ieee format citation generator	150	2.5	4	9600	Informational,Branded,Non-local	ieee citation generator
+sbl citation generator	150	2.5	40	60	Informational,Branded,Non-local	sbl citation generator
+nature citation generator	150	5.0	40	250	Informational,Branded,Non-local	nature citation style
+jama citation generator	150	2.5	1	150	Informational,Branded,Non-local	jama citation generator
+chicago style citation generator free	150	0.09	17	18000	Informational,Non-branded,Non-local	chicago style citation
+asa format citation generator	150	0.15	0	9700	Informational,Branded,Non-local	asa citation generator
+image mla citation generator	150	1.5	33	2000	Informational,Non-branded,Non-local	image citation generator
+mla photo citation generator	150	1.1	31	2200	Informational,Non-branded,Non-local	how to cite an image in mla
+citation generator turabian	150	1.5	2	9900	Informational,Non-branded,Non-local	turabian citation generator
+jas citation generator	150	7.0	0	200	Informational,Branded,Non-local	journal of animal science citation
+youtube video citation generator	150	0.02	2	1340000	Informational,Non-branded,Non-local	apa citation generator
+citation generator chicago style	150	0.2	19	87000	Informational,Non-branded,Non-local	chicago citation generator
+podcast citation generator	150	1.9	1	700	Informational,Non-branded,Non-local	how to cite a podcast
+ama 11th edition citation generator	150	1.8	2	32000	Informational,Non-branded,Non-local	ama citation generator
+ama style citation generator	150	2.5	5	32000	Informational,Non-branded,Non-local	ama citation generator
+iee citation generator	150	2.5	4	9500	Informational,Branded,Non-local	ieee citation generator
+youtube video mla citation generator	100	0.5	25	849000	Informational,Non-branded,Non-local	mla citation generator
+alwd citation generator	100	1.9	7	5000	Informational,Commercial,Non-branded,Non-local	bluebook citation generator
+aip citation generator	100	7.0	0	60	Informational,Branded,Non-local	aip citation generator
+citation generator asa	100	2.5	4	9700	Informational,Branded,Non-local	asa citation generator
+podcast apa citation generator	100	1.2	15	350	Informational,Non-branded,Non-local	podcast citation generator
+aps citation generator	100	0.35	1	30	Informational,Branded,Non-local	aps citation
+free turabian citation generator	100	2.5	2	9900	Informational,Non-branded,Non-local	turabian citation generator
+ama 11 citation generator	100	0.0	5	32000	Informational,Branded,Non-local	ama citation generator
+mla citation alphabetical order generator	100	2.0	4	2900	Informational,Non-branded,Non-local	alphabetical order sorter
+ieee style citation generator	100	2.5	4	16000	Informational,Branded,Non-local	ieee citation
+noodletools citation generator	100	0.0	2	4200	Informational,Branded,Non-local	noodletools citation
+cse name year citation generator	100	0.0	3	8400	Informational,Branded,Non-local	cse citation generator
+asa style citation generator	100	0.1	0	9700	Informational,Branded,Non-local	asa citation generator
+acs format citation generator	100	0.05	2	22000	Informational,Branded,Non-local	acs citation generator
+american chemical society citation generator	100	2.5	2	22000	Informational,Branded,Non-local	acs citation generator
+ama citation generator free	100	2.5	4	32000	Informational,Non-branded,Non-local	ama citation generator
+wikipedia citation generator	100	0.25	39	40	Informational,Non-branded,Non-local	wikipedia citation generator
+ams citation generator	100	3.5	0	60	Informational,Branded,Non-local	ams citation generator
+latex citation generator	90	0.0	40	2700	Informational,Non-branded,Non-local	bibtex generator
+cbe citation generator	90	3.5	2	8400	Informational,Non-branded,Non-local	cse citation generator
+apa movie citation generator	90	0.08	36	4600	Informational,Non-branded,Non-local	how to cite a video
+image citation generator apa	90	1.0	3	10000	Informational,Branded,Non-local	how to cite a picture
+oscola citation generator	90	3.0	8	70	Informational,Non-branded,Non-local	oscola citation generator
+case citation generator	90	2.0	8	150	Informational,Non-branded,Non-local	case citation generator
+cse format citation generator	90	3.5	2	8400	Informational,Branded,Non-local	cse citation generator
+book mla citation generator	90	0.09	40	7400	Transactional,Non-branded,Non-local	mla book citation
+journal of animal science citation generator	80	3.0	0	200	Informational,Branded,Non-local	journal of animal science citation
+free ieee citation generator	80	6.0	4	16000	Informational,Non-branded,Non-local	ieee citation
+chicago style footnote citation generator	80	1.3	7	91000	Informational,Non-branded,Non-local	chicago citation generator
+chicago style generator citation	80	0.0	9	90000	Informational,Non-branded,Non-local	chicago citation generator
+movie mla citation generator	80	1.9	26	2100	Informational,Non-branded,Non-local	how to cite a movie
+citation generator acs	80	4.0	3	22000	Informational,Branded,Non-local	acs citation generator
+law citation generator	80	2.0	26	5000	Informational,Non-branded,Non-local	bluebook citation generator
+youtube mla citation generator	80	0.2	25	814000	Informational,Branded,Non-local	mla citation generator
+chicago author-date citation generator	80	2.0	4	31000	Informational,Non-branded,Local	chicago style citation generator
+scribber citation generator	80	3.5	6	91000	Informational,Branded,Non-local	references
+chicago in-text citation generator	80	2.0	19	83000	Informational,Non-branded,Local	chicago citation generator
+chicago citation style generator	70	0.0	10	78000	Informational,Non-branded,Non-local	chicago citation generator
+turabian 9th edition citation generator	70	1.5	2	10000	Informational,Non-branded,Non-local	turabian citation generator
+university of phoenix citation generator	70	4.5	0	100	Informational,Branded,Non-local	university of phoenix citation generator
+cse style citation generator	70	3.5	2	8400	Informational,Branded,Non-local	cse citation generator
+court case citation generator	70	2.0	3	150	Informational,Non-branded,Non-local	case citation generator
+mla poem citation generator	70	2.0	14	800	Informational,Branded,Non-local	how to cite a poem
+citation generator mybib	70	0.0	16	680000	Informational,Navigational,Branded,Non-local	citation generator
+citation generator mla 8	70	0.02	26	819000	Informational,Branded,Non-local	mla citation generator
+free acs citation generator	70	4.5	2	22000	Informational,Non-branded,Non-local	acs citation generator
+ieee citation format generator	70	2.5	4	9700	Informational,Branded,Non-local	ieee citation generator
+ama citation format generator	70	3.0	8	32000	Informational,Branded,Non-local	ama citation generator
+chicago generator citation	60	0.0	10	78000	Informational,Non-branded,Local	chicago citation generator
+apa photo citation generator	60	1.6	22	10000	Informational,Non-branded,Non-local	how to cite a picture
+ama generator citation	60	0.0	4	32000	Informational,Branded,Non-local	ama citation generator
+citation generator apsa	60	0.0	1	2900	Informational,Branded,Non-local	apsa citation generator
+image citation generator mla	60	0.0	2	2300	Informational,Branded,Non-local	image citation generator
+chicago 17th citation generator	60	2.0	7	22000	Informational,Non-branded,Local	chicago style citation
+blue book citation generator	60	1.7	3	5100	Informational,Non-branded,Non-local	bluebook citation generator
+free asa citation generator	60	2.5	4	8400	Informational,Non-branded,Non-local	asa citation generator
+patent citation generator	60	1.6	0	20	Informational,Non-branded,Non-local	patent citation generator
+chicago 17 citation generator	60	2.0	7	34000	Informational,Branded,Non-local	chicago style citation generator
+image apa citation generator	60	1.4	36	8100	Informational,Non-branded,Non-local	apa image citation
+citation generator harvard	60	0.0	26	6300	Informational,Non-branded,Non-local	harvard referencing
+msse citation generator	60	4.0	0	50	Informational,Branded,Non-local	msse citation generator
+mla song citation generator	60	1.9	7	300	Informational,Branded,Non-local	song citation generator
+turabian format citation generator	60	3.0	3	10000	Informational,Non-branded,Non-local	turabian citation generator
+ieee citation generator free	60	0.0	4	9500	Informational,Non-branded,Non-local	ieee citation generator
+alphabetical order citation generator	60	2.0	9	2600	Informational,Non-branded,Non-local	alphabetical order sorter
+citation generator vancouver	60	3.0	35	2400	Informational,Non-branded,Non-local	vancouver style citation
+citation generator cse	50	1.4	1	8400	Informational,Branded,Non-local	cse citation generator
+apa podcast citation generator	50	2.0	15	700	Informational,Non-branded,Non-local	how to cite a podcast
+chatgpt citation generator	50	0.0	12	300	Informational,Branded,Non-local	chatgpt citation
+tv show apa citation generator	50	0.0	28	50	Informational,Non-branded,Non-local	tv show apa citation generator
+papers please citation generator	50	0.0	40	20	Informational,Branded,Non-local	papers please citation generator
+american sociological association citation generator	50	3.0	0	9700	Informational,Transactional,Branded,Non-local	asa citation generator
+citation generator bluebook	50	0.0	6	5100	Informational,Non-branded,Non-local	bluebook citation generator
+music citation generator	50	0.0	0	676000	Informational,Non-branded,Non-local	citation generator
+free chicago style citation generator	50	0.09	7	31000	Informational,Non-branded,Non-local	chicago style citation generator
+bible mla citation generator	50	0.0	1	20	Informational,Non-branded,Non-local	bible mla citation generator
+footnotes citation generator	50	0.0	15	87000	Informational,Non-branded,Non-local	chicago citation generator
+ama in text citation generator	50	2.5	6	14000	Informational,Branded,Non-local	ama citation
+chicago author date style citation generator	50	0.3	6	300	Informational,Non-branded,Non-local	chicago author date citation generator
+turbian citation generator	50	0.0	2	9900	Informational,Non-branded,Non-local	turabian citation generator
+bluebook legal citation generator	50	1.4	7	5100	Informational,Commercial,Branded,Non-local	bluebook citation generator
+purdue apa citation generator	50	0.2	35	57000	Informational,Branded,Non-local	apa 7th edition
+apa bible citation generator	50	0.07	24	500	Informational,Non-branded,Non-local	how to cite the bible
+chicago in text citation generator	50	2.0	19	90000	Informational,Non-branded,Local	chicago citation generator
+mla picture citation generator	50	1.0	36	2700	Informational,Branded,Non-local	image citation generator
+citation ama generator	50	0.0	4	32000	Informational,Branded,Non-local	ama citation generator
+podcast mla citation generator	50	2.5	12	700	Informational,Non-branded,Non-local	how to cite a podcast
+tv show citation generator	50	0.0	34	150	Informational,Non-branded,Non-local	how to cite a tv show
+vancouver citation style generator	50	3.0	3	2400	Informational,Non-branded,Non-local	vancouver style citation
+chicago 17th edition citation generator	50	2.0	6	100	Informational,Non-branded,Local	chicago 17th edition citation generator
+mybib apa citation generator	50	0.0	31	1330000	Informational,Navigational,Branded,Non-local	apa citation generator
+icmje citation generator	50	3.0	0	10	Informational,Non-branded,Non-local	icmje citation generator
+jwm citation generator	50	0.0	0	70	Informational,Branded,Non-local	jwm citation generator
+poem mla citation generator	50	2.0	23	900	Informational,Branded,Non-local	how to cite a poem
+chicago turabian style citation generator	50	1.2	6	9700	Informational,Non-branded,Local	turabian citation generator
+chemistry citation generator	50	0.0	2	22000	Informational,Non-branded,Non-local	acs citation generator
+turabian footnote citation generator	50	1.5	4	9700	Informational,Non-branded,Non-local	turabian citation generator
+apa citation generator podcast	40	0.0	15	350	Informational,Non-branded,Non-local	podcast citation generator
+acs citation generator free	40	0.0	2	20000	Informational,Non-branded,Non-local	acs citation generator
+free apa citation generator 7th edition	40	2.0	0	1350000	Informational,Non-branded,Non-local	apa citation generator
+case law citation generator	40	1.7	8	150	Informational,Non-branded,Non-local	case citation generator
+citation generator quillbot	40	0.05	0	14000	Informational,Navigational,Branded,Non-local	free citation generator
+chicago style 17th edition citation generator	40	0.0	7	22000	Informational,Non-branded,Non-local	chicago style citation
+mla video citation generator	40	0.1	22	1800	Informational,Non-branded,Non-local	how to cite a movie
+chicago manual of style 17th edition citation generator	40	0.0	7	22000	Informational,Branded,Non-local	chicago style citation
+journal of wildlife management citation generator	40	0.0	0	70	Informational,Branded,Non-local	journal of wildlife management citation
+apa citation generator for images	40	0.0	16	12000	Informational,Non-branded,Non-local	how to cite images
+chicago citation footnote generator	40	1.7	17	80000	Informational,Non-branded,Non-local	chicago citation generator
+turabian citation generator free	40	2.5	4	10000	Informational,Non-branded,Non-local	turabian citation generator
+mla citation generator for images	40	0.0	11	2700	Informational,Non-branded,Non-local	image citation generator
+legal case citation generator	40	1.7	8	150	Informational,Non-branded,Non-local	case citation generator
+mla podcast citation generator	40	0.0	12	350	Informational,Branded,Non-local	podcast citation generator
+mla 8th citation generator	40	0.0	29	813000	Informational,Non-branded,Non-local	mla citation generator
+mla citation generator book	40	0.0	21	7600	Informational,Transactional,Non-branded,Non-local	mla book citation
+acs citation format generator	40	0.0	4	23000	Informational,Branded,Non-local	acs citation generator
+citation generator chicago manual of style	40	0.0	17	88000	Informational,Branded,Non-local	chicago citation generator
+chicago/turabian citation generator	40	1.4	4	10000	Informational,Non-branded,Local	turabian citation generator
+ecology format citation generator	40	2.5	0	100	Informational,Non-branded,Non-local	ecology citation generator
+textbook mla citation generator	40	0.7	23	7100	Informational,Non-branded,Non-local	mla book citation
+ama website citation generator	40	2.5	3	32000	Informational,Non-branded,Non-local	ama citation generator
+council of science editors citation generator	40	3.5	0	3300	Informational,Branded,Non-local	cse citation
+acm style citation generator	40	0.0	0	200	Informational,Branded,Non-local	acm format generator
+citation generator nlm	40	1.7	0	1500	Informational,Branded,Non-local	nlm citation generator
+free citation generator chicago	40	1.6	10	22000	Informational,Non-branded,Local	chicago style citation
+chicago apa citation generator	40	0.0	19	82000	Informational,Non-branded,Local	chicago citation generator
+aaa style citation generator	40	0.0	30	350	Informational,Branded,Non-local	aaa citation
+chicago style format citation generator	40	1.3	17	93000	Informational,Non-branded,Non-local	chicago citation generator
+asa citation generator free	40	2.5	3	8500	Informational,Non-branded,Non-local	asa citation generator
+film citation generator	40	2.0	10	2100	Informational,Non-branded,Non-local	how to cite a movie
+bibguru citation generator	40	0.0	10	26000	Informational,Navigational,Branded,Non-local	my bib
+apa citation generator for powerpoint	40	1.7	39	150	Informational,Branded,Non-local	powerpoint citation generator
+mla citation generator for books	40	0.0	24	6700	Informational,Non-branded,Non-local	mla book citation
+free bluebook citation generator	40	2.0	24	5100	Informational,Non-branded,Non-local	bluebook citation generator
+american medical association citation generator	40	3.0	8	32000	Informational,Branded,Non-local	ama citation generator
+scribbr.com citation generator	40	0.0	5	116000	Informational,Navigational,Branded,Non-local	citation generator
+video game citation generator	40	0.0	4	20	Informational,Non-branded,Non-local	video game citation generator
+free cse citation generator	40	0.0	2	3300	Informational,Non-branded,Non-local	cse citation
+aca citation generator	30	0.15	4	22000	Informational,Branded,Non-local	acs citation generator
+ada citation generator	30	1.5	0	273000	Informational,Non-branded,Non-local	apa citation
+art citation generator	30	0.0	39	450	Informational,Non-branded,Non-local	how to cite a painting
+mhra citation generator	30	0.0	0	20	Informational,Branded,Non-local	mhra citation generator
+free harvard citation generator	30	2.0	7	6200	Informational,Non-branded,Non-local	harvard referencing
+citation alphabetical order generator	30	0.0	5	2500	Informational,Non-branded,Non-local	citation alphabetizer
+turabian chicago citation generator	30	0.0	4	10000	Informational,Non-branded,Local	turabian citation generator
+uptodate citation generator	30	2.5	34	20	Informational,Branded,Non-local	uptodate citation generator
+book citation generator mla	30	0.0	31	6800	Informational,Non-branded,Non-local	how to cite a book mla
+chicago author-date style citation generator	30	1.7	4	18000	Informational,Non-branded,Local	chicago style citation
+footnote citation chicago generator	30	1.7	8	93000	Informational,Non-branded,Local	chicago citation generator
+cbe/cse citation generator	30	0.0	2	8400	Informational,Non-branded,Non-local	cse citation generator
+artwork citation generator	30	0.0	0	500	Informational,Non-branded,Non-local	how to cite a painting
+citation generator chicago turabian	30	0.0	2	9900	Informational,Non-branded,Local	turabian citation generator
+chicago style bibliography citation generator	30	0.0	9	83000	Informational,Branded,Non-local	chicago citation generator
+national library of medicine citation generator	30	0.0	0	1500	Informational,Branded,Non-local	nlm citation generator
+jbc citation generator	30	0.0	0	20	Informational,Branded,Non-local	jbc citation generator
+free citation generator ama	30	3.0	9	32000	Informational,Branded,Non-local	ama citation generator
+chicago style author date citation generator	30	1.7	6	300	Informational,Non-branded,Non-local	chicago author date citation generator
+spanish mla citation generator	30	0.0	31	10	Informational,Non-branded,Non-local	spanish mla citation generator
+mla citation generator poem	30	2.0	6	900	Informational,Non-branded,Non-local	how to cite a poem
+jstor citation generator	30	0.0	1	10	Informational,Branded,Non-local	jstor citation generator
+mla citation generator youtube video	30	0.0	33	802000	Informational,Non-branded,Non-local	mla citation generator
+westlaw citation generator	30	1.6	4	30	Informational,Branded,Non-local	westlaw citation generator
+apa picture citation generator	30	1.4	19	12000	Informational,Non-branded,Non-local	how to cite images
+video mla citation generator	30	0.1	12	819000	Informational,Non-branded,Non-local	mla citation generator
+chicago website citation generator	30	2.0	8	60	Informational,Non-branded,Local	citation machine chicago style
+mla citation generator movie	30	2.5	14	2200	Informational,Non-branded,Non-local	how to cite a movie
+mla citation generator for youtube video	30	0.1	23	802000	Informational,Non-branded,Non-local	mla citation generator
+citation generator for chicago style	30	1.3	40	82000	Informational,Non-branded,Non-local	chicago citation generator
+citation generator bibtex	30	0.0	39	2800	Informational,Branded,Non-local	bibtex generator
+esa citation generator	30	0.0	0	30	Informational,Branded,Non-local	esa citation
+asa citation format generator	30	3.0	0	9700	Informational,Branded,Non-local	asa citation generator
+mla citation book generator	30	0.8	31	7500	Informational,Non-branded,Non-local	mla book citation
+asc citation generator	30	0.0	2	22000	Informational,Branded,Non-local	acs citation generator
+chicago style citation footnote generator	30	1.7	15	87000	Informational,Non-branded,Non-local	chicago citation generator
+mla citation song generator	30	0.0	9	300	Informational,Non-branded,Non-local	song citation generator
+bibme mla citation generator	30	0.0	40	15000	Informational,Navigational,Branded,Non-local	bibme
+chicago footnotes citation generator	30	0.0	17	82000	Informational,Non-branded,Local	chicago citation generator
+american antiquity citation generator	30	0.0	0	30	Informational,Branded,Non-local	american antiquity citation
+ml citation generator	30	0.0	4	743000	Informational,Branded,Non-local	mla citation generator
+image citation mla generator	30	1.0	10	2600	Informational,Non-branded,Non-local	image citation generator
+apa court case citation generator	30	2.0	36	150	Informational,Branded,Non-local	case citation generator
+citation chicago style generator	30	0.0	19	90000	Informational,Non-branded,Non-local	chicago citation generator
+verbal citation generator	30	5.0	25	70	Informational,Non-branded,Non-local	oral citation generator
+photo citation generator mla	30	0.0	13	2700	Informational,Branded,Non-local	image citation generator
+bluebook citation generator free	30	1.3	7	5100	Informational,Non-branded,Non-local	bluebook citation generator
+powerpoint apa citation generator	30	0.0	39	150	Informational,Branded,Non-local	powerpoint citation generator
+chicago notes and bibliography citation generator	30	1.6	17	91000	Informational,Non-branded,Local	chicago citation generator
+harvard citation style generator	30	0.0	17	6200	Informational,Non-branded,Non-local	harvard referencing
+bluebook statute citation generator	30	0.0	4	5000	Informational,Non-branded,Non-local	bluebook citation generator
+grammerly citation generator	30	0.6	4	12000	Informational,Navigational,Branded,Non-local	grammarly citation
+state statute citation generator	30	1.8	5	20	Informational,Non-branded,Non-local	state statute citation generator
+cse citation format generator	30	3.5	4	8400	Informational,Branded,Non-local	cse citation generator
+mla citation generator for movies	30	0.0	23	2200	Informational,Non-branded,Non-local	how to cite a movie
+citation generator chicago 17th	30	2.5	7	18000	Informational,Branded,Non-local	chicago style citation
+chicago image citation generator	30	0.0	8	40	Informational,Non-branded,Non-local	chicago style image citation
+statute citation generator	30	3.0	6	5100	Informational,Non-branded,Non-local	bluebook citation generator
+journal of neuroscience citation generator	30	0.0	0	20	Informational,Branded,Non-local	journal of neuroscience citation style
+nature style citation generator	30	0.0	0	250	Informational,Non-branded,Non-local	nature citation style
+engineering citation generator	20	0.0	5	16000	Informational,Non-branded,Non-local	ieee citation
+asm style citation generator	20	0.0	0	450	Informational,Branded,Non-local	asm citation generator
+bluebook format citation generator	20	0.0	3	5100	Informational,Branded,Non-local	bluebook citation generator
+name year citation generator	20	0.0	6	8500	Informational,Non-branded,Non-local	cse citation generator
+apa 7 image citation generator	20	3.0	40	12000	Informational,Branded,Non-local	how to cite images
+chicago nb citation generator	20	0.0	7	91000	Informational,Non-branded,Local	chicago citation generator
+ieee website citation generator	20	0.0	4	9700	Informational,Non-branded,Non-local	ieee citation generator
+ted talk apa citation generator	20	4.0	4	250	Informational,Branded,Non-local	how to cite a ted talk
+sds citation generator	20	0.0	2	22000	Informational,Non-branded,Non-local	acs citation generator
+apa citation movie generator	20	2.5	29	3300	Informational,Non-branded,Non-local	how to cite a movie apa
+poem citation mla generator	20	2.0	23	900	Informational,Non-branded,Non-local	how to cite a poem
+turabian in text citation generator	20	3.0	2	9900	Informational,Non-branded,Non-local	turabian citation generator
+bluebook footnote citation generator	20	0.0	3	5100	Informational,Non-branded,Non-local	bluebook citation generator
+painting citation generator	20	0.0	0	600	Informational,Non-branded,Non-local	how to cite a painting
+best bluebook citation generator	20	2.5	3	1500	Informational,Non-branded,Non-local	bluebook citation generator
+apa citation generator quillbot	20	0.0	0	15000	Informational,Navigational,Branded,Non-local	quillbot citation generator
+the chicago manual of style citation generator	20	1.6	7	91000	Informational,Branded,Non-local	chicago citation generator
+citation generator university of phoenix	20	4.5	3	90	Informational,Navigational,Branded,Non-local	university of phoenix citation generator
+ama 10th edition citation generator	20	0.0	16	31000	Informational,Non-branded,Non-local	ama citation generator
+apa 5 citation generator	20	0.0	17	1310000	Informational,Branded,Non-local	apa citation generator
+apa citation generator for pictures	20	2.0	14	12000	Informational,Branded,Non-local	how to cite images
+agu citation generator	20	0.0	8	10	Informational,Branded,Non-local	agu citation generator
+mla citation poem generator	20	2.0	22	900	Informational,Branded,Non-local	how to cite a poem
+apa citation podcast generator	20	0.0	15	350	Informational,Non-branded,Non-local	podcast citation generator
+ieee citation style generator	20	0.0	4	16000	Informational,Branded,Non-local	ieee citation
+biology citation generator	20	0.0	1	20	Informational,Non-branded,Non-local	biology citation generator
+cse in text citation generator	20	0.0	2	8400	Informational,Non-branded,Non-local	cse citation generator
+mla citation 8th edition generator	20	4.0	27	2000	Informational,Non-branded,Non-local	mla 8 citation generator
+tv show mla citation generator	20	2.5	13	20	Informational,Branded,Non-local	tv show mla citation generator
+chigago citation generator	20	0.0	0	10	Informational,Non-branded,Non-local	citation organizer
+nature citation style generator	20	0.0	2	250	Informational,Branded,Non-local	nature citation style
+poetry citation generator	20	0.0	6	800	Informational,Non-branded,Non-local	how to cite a poem
+chicago 16th edition citation generator	20	0.0	6	83000	Informational,Transactional,Branded,Non-local	chicago citation generator
+mla film citation generator	20	2.5	26	2100	Informational,Branded,Non-local	how to cite a movie
+movie citation generator mla	20	2.5	22	2300	Informational,Branded,Non-local	how to cite a movie
+ama book citation generator	20	2.5	6	32000	Informational,Branded,Non-local	ama citation generator
+acs citation style generator	20	0.0	2	22000	Informational,Branded,Non-local	acs citation generator
+apa citation alphabetical order generator	20	1.7	7	20	Informational,Non-branded,Non-local	alphabetizer
+supreme court case citation generator	20	0.0	3	150	Informational,Non-branded,Non-local	case citation generator
+tiktok citation generator	20	0.0	3	90	Informational,Branded,Non-local	how to cite an instagram post
+bluebook case citation generator	20	0.0	3	5100	Informational,Non-branded,Non-local	bluebook citation generator
+bluebook website citation generator	20	0.0	5	5100	Informational,Non-branded,Non-local	bluebook citation generator
+american marketing association citation generator	20	0.0	3	10	Informational,Branded,Non-local	american marketing association citation generator
+chicago manual of style citation generator free	20	0.0	7	18000	Informational,Branded,Non-local	chicago style citation
+chicago style citation bibliography generator	20	0.0	18	78000	Informational,Non-branded,Non-local	chicago citation generator
+chicago style image citation generator	20	0.0	8	34000	Informational,Non-branded,Non-local	chicago style citation generator
+citation chicago generator	20	0.15	40	88000	Informational,Non-branded,Local	chicago citation generator
+vancouver format citation generator	20	3.0	4	2600	Informational,Non-branded,Non-local	vancouver style citation
+speech citation generator	20	0.0	27	40	Informational,Non-branded,Non-local	oral citation generator
+chicago book citation generator	20	0.0	9	78000	Informational,Non-branded,Local	chicago citation generator
+mla citation youtube video generator	20	0.7	9	821000	Informational,Non-branded,Non-local	mla citation generator
+mla format book citation generator	20	0.7	23	7400	Informational,Branded,Non-local	mla book citation
+apa citation for youtube video generator	20	0.15	28	1300000	Informational,Non-branded,Non-local	apa citation generator
+overleaf citation generator	20	0.0	34	2800	Informational,Branded,Non-local	bibtex citation generator
+cell citation generator	20	0.0	0	40	Informational,Non-branded,Non-local	cell citation style
+alphabetical citation generator	20	0.0	0	3000	Informational,Non-branded,Non-local	alphabetical order sorter
+online bluebook citation generator	20	2.0	6	5100	Informational,Non-branded,Non-local	bluebook citation generator
+nih citation generator	20	0.0	2	1500	Informational,Non-branded,Non-local	nlm citation generator
+oxford citation generator	20	4.5	14	40	Informational,Non-branded,Non-local	oxford citation generator
+image citation apa generator	20	0.2	11	10000	Informational,Branded,Non-local	how to cite a picture
+apsa style citation generator	20	3.5	0	2900	Informational,Transactional,Branded,Non-local	apsa citation generator
+cse 8th edition citation generator	20	0.0	1	8400	Informational,Branded,Non-local	cse citation generator
+legal bluebook citation generator	20	1.4	3	5100	Informational,Commercial,Transactional,Branded,Non-local	bluebook citation generator
+ecology style citation generator	20	0.0	0	150	Informational,Non-branded,Non-local	ecology citation generator
+apa citation generator powerpoint	20	0.1	16	100	Informational,Branded,Non-local	powerpoint citation generator
+asa in text citation generator	20	2.5	0	8400	Informational,Branded,Non-local	asa citation generator
+hbs citation generator	20	0.0	8	6200	Informational,Non-branded,Non-local	harvard referencing
+author date citation generator	20	0.0	6	300	Informational,Non-branded,Non-local	chicago author date citation generator
+pmid citation generator	20	0.0	4	350	Informational,Non-branded,Non-local	mick schroeder citation
+turabian chicago style citation generator	20	0.0	6	11000	Informational,Non-branded,Non-local	turabian citation generator
+citation generator for movies	20	0.0	2	2300	Informational,Non-branded,Non-local	how to cite a movie
+genealogy citation generator	20	2.5	20	40	Informational,Non-branded,Non-local	cite builder
+medical citation generator	20	0.0	4	32000	Informational,Non-branded,Non-local	ama citation generator
+pnas citation generator	20	0.0	0	10	Informational,Branded,Non-local	pnas citation generator
+bill citation generator	20	0.0	39	10	Informational,Non-branded,Non-local	bill citation generator
+meps citation generator	20	0.0	0	10	Informational,Branded,Non-local	meps citation generator
+cse name-year citation generator	20	0.0	3	8400	Informational,Branded,Non-local	cse citation generator
+movie citation mla generator	20	2.5	35	2200	Informational,Non-branded,Non-local	how to cite a movie
+mla textbook citation generator	20	0.7	33	7400	Informational,Branded,Non-local	mla book citation
+purdue owl ama citation generator	20	0.0	0	28000	Informational,Branded,Non-local	ama citation
+nejm citation generator	20	0.0	3	20	Informational,Branded,Non-local	nejm citation generator
+asme format citation generator	20	0.0	0	200	Informational,Branded,Non-local	asme citation generator
+bible apa citation generator	20	0.0	23	600	Informational,Non-branded,Non-local	how to cite the bible
+harvard format citation generator	20	0.0	17	6200	Informational,Non-branded,Non-local	harvard referencing
+cse citation generator purdue owl	10	0.0	3	16000	Informational,Navigational,Branded,Non-local	purdue owl citation
+sociology citation generator	10	0.0	0	9700	Informational,Non-branded,Non-local	asa citation generator
+cse name year style citation generator	10	0.0	3	8600	Informational,Non-branded,Non-local	cse citation generator
+mybib mla citation generator	10	0.0	35	688000	Informational,Navigational,Branded,Non-local	mla citation generator
+mla citation generator quillbot	10	0.0	0	14000	Informational,Branded,Non-local	free citation generator
+film mla citation generator	10	0.0	24	1800	Informational,Non-branded,Non-local	how to cite a movie
+legal citation generator apa	10	1.1	38	5100	Informational,Branded,Non-local	bluebook citation generator
+chicago 17th style citation generator	10	0.0	5	150	Informational,Non-branded,Local	chicago 17th edition citation generator
+harvard bluebook citation generator	10	0.0	6	5100	Informational,Branded,Non-local	bluebook citation generator
+apa citation image generator	10	0.8	11	9300	Informational,Non-branded,Non-local	how to cite a picture
+quillbot.com citation generator	10	0.09	0	15000	Informational,Navigational,Branded,Non-local	quillbot citation generator
+chicago humanities style citation generator	10	2.0	17	89000	Informational,Non-branded,Non-local	chicago citation generator
+primary source citation chicago generator	10	0.0	22	80000	Informational,Non-branded,Non-local	chicago citation generator
+ama 7 citation generator	10	0.0	6	32000	Informational,Branded,Non-local	ama citation generator
+google map citation generator	10	0.0	0	10	Informational,Branded,Non-local	map citation
+scribbr's free citation generator	10	0.0	1	120000	Informational,Navigational,Branded,Non-local	citation generator
+bluebook law citation generator	10	1.4	3	5100	Informational,Non-branded,Non-local	bluebook citation generator
+apsr citation generator	10	0.0	0	20	Informational,Branded,Non-local	apsr citation
+mla citation movie generator	10	2.5	25	2200	Informational,Non-branded,Non-local	how to cite a movie
+scientific style citation generator	10	0.0	20	8400	Informational,Branded,Non-local	cse citation generator
+apa citation generator image	10	0.0	35	10000	Informational,Non-branded,Non-local	how to cite a picture
+image citation generator chicago	10	0.0	7	40	Informational,Non-branded,Local	chicago image citation generator
+aspa citation generator	10	0.0	0	2900	Informational,Branded,Non-local	apsa citation generator
+mla citation image generator	10	0.0	36	2700	Informational,Non-branded,Non-local	image citation generator
+apa interview citation generator	10	0.0	22	100	Informational,Non-branded,Non-local	apa citation for interview
+shakespeare citation generator	10	0.0	0	50	Informational,Non-branded,Non-local	shakespeare citation
+author-date citation generator	10	0.0	6	300	Informational,Non-branded,Non-local	chicago author date citation generator
+apa citation generator movie	10	2.5	34	3300	Informational,Non-branded,Non-local	how to cite a movie apa
+chicago manual style 17th edition citation generator	10	0.0	9	100	Informational,Branded,Non-local	chicago 17th edition citation generator
+chicago endnote citation generator	10	0.0	8	78000	Informational,Non-branded,Local	chicago citation generator
+ebook mla citation generator	10	3.0	22	7400	Informational,Non-branded,Non-local	mla book citation
+online image citation generator	10	0.0	30	16000	Informational,Non-branded,Non-local	how to cite an image
+apa citation generator alphabetical order	10	0.0	12	80	Informational,Non-branded,Non-local	mybib apa
+state bill citation generator	10	0.0	8	10	Informational,Non-branded,Non-local	bill citation generator
+noodle tools citation generator	10	0.0	2	4200	Informational,Branded,Non-local	noodletools citation
+movie citation apa generator	10	2.5	7	3000	Informational,Non-branded,Non-local	cite a video
+turabian website citation generator	10	0.0	2	10000	Informational,Non-branded,Non-local	turabian citation generator
+citation generator asa format	10	0.0	0	8400	Informational,Branded,Non-local	asa citation generator
+scientific style and format citation generator	10	0.0	3	8400	Informational,Branded,Non-local	cse citation generator
+purdue owl citation generator apa	10	3.0	37	17000	Informational,Navigational,Branded,Non-local	purdue owl citation
+cse ny citation generator	10	0.0	6	8400	Informational,Non-branded,Local	cse citation generator
+mla citation generator 8th edition	10	0.0	27	818000	Informational,Non-branded,Non-local	mla citation generator
+ama citation website generator	10	3.0	5	32000	Informational,Non-branded,Non-local	ama citation generator
+anthology mla citation generator	10	0.0	26	20	Informational,Non-branded,Non-local	anthology mla citation generator
+astm citation generator	10	0.0	2	400	Informational,Branded,Non-local	asce citation machine
+turabian citation generator 9th edition	10	3.5	0	10000	Informational,Non-branded,Non-local	turabian citation generator
+law case citation generator	10	2.0	9	150	Informational,Non-branded,Non-local	case citation generator
+google image citation generator	10	0.0	16	12000	Informational,Non-branded,Non-local	how to cite an image
+mla citation generator video	10	0.1	11	2100	Informational,Non-branded,Non-local	how to cite a movie
+kate turabian citation generator	10	0.0	4	10000	Informational,Non-branded,Non-local	turabian citation generator
+apsa format citation generator	10	0.0	0	2000	Informational,Branded,Non-local	apsa citation generator
+gsa style citation generator	10	0.0	0	200	Informational,Branded,Non-local	gsa citation generator
+mla 8 format citation generator	10	0.0	28	814000	Informational,Branded,Non-local	mla citation generator
+law review citation generator	10	2.0	3	5100	Informational,Non-branded,Non-local	bluebook citation generator
+grammarly.com citation generator	10	0.0	1	11000	Informational,Navigational,Branded,Non-local	grammarly citation
+mla citation generator podcast	10	0.0	9	350	Informational,Non-branded,Non-local	podcast citation generator
+movie citation generator apa	10	0.0	25	4700	Informational,Non-branded,Non-local	how to cite a video
+youtube citation mla generator	10	0.2	25	855000	Informational,Branded,Non-local	mla citation generator
+gramarly citation generator	10	0.0	0	12000	Informational,Navigational,Branded,Non-local	grammarly citation
+citation turabian generator	10	0.0	2	9900	Informational,Non-branded,Non-local	turabian citation generator
+picture mla citation generator	10	0.0	34	2600	Informational,Branded,Non-local	image citation generator
+anthropology citation generator	10	0.0	0	350	Informational,Non-branded,Non-local	aaa citation
+bluebook style citation generator	10	0.0	3	5100	Informational,Branded,Non-local	bluebook citation generator
+ama citation generator website	10	3.0	3	32000	Informational,Non-branded,Non-local	ama citation generator
+online ama citation generator	10	0.0	6	32000	Informational,Non-branded,Non-local	ama citation generator
+documentary citation generator	10	0.0	27	2200	Informational,Non-branded,Non-local	how to cite a movie
+chicago/turabian style citation generator	10	1.2	4	10000	Informational,Non-branded,Non-local	turabian citation generator
+citation generator purdue owl	10	3.0	11	19000	Informational,Navigational,Branded,Non-local	purdue owl citation
+scribber apa citation generator	10	0.0	27	40000	Informational,Navigational,Branded,Non-local	apa citation generator

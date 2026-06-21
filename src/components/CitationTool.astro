@@ -1,0 +1,63 @@
+---
+import { styleById } from '../data/styles.js';
+import { sourceById } from '../data/sourceTypes.js';
+
+interface Props {
+  defaultStyleId: string;
+  defaultSourceId?: string;
+  lockStyle?: boolean;
+  lockSource?: boolean;
+}
+const { defaultStyleId, defaultSourceId = 'journal-article', lockStyle = false, lockSource = false } = Astro.props;
+const style = styleById[defaultStyleId];
+const source = sourceById[defaultSourceId];
+---
+
+<section
+  class="rounded-xl border border-[var(--color-line)] bg-[var(--color-bg-soft)] p-4 sm:p-6"
+  data-citation-tool
+  data-default-style={defaultStyleId}
+  data-default-source={defaultSourceId}
+  data-lock-style={String(lockStyle)}
+  data-lock-source={String(lockSource)}
+>
+  <div class="flex flex-wrap gap-4 mb-4">
+    <div class="flex flex-col gap-1">
+      <span class="text-xs font-medium text-[var(--color-muted)]">Citation style</span>
+      {lockStyle
+        ? <span class="font-semibold text-[var(--color-ink)] py-1.5">{style.labelLong}</span>
+        : <select data-style-select class="border border-[var(--color-line)] rounded px-2 py-1.5 text-sm bg-white"></select>}
+    </div>
+    <div class="flex flex-col gap-1">
+      <span class="text-xs font-medium text-[var(--color-muted)]">Source type</span>
+      {lockSource
+        ? <span class="font-semibold text-[var(--color-ink)] py-1.5">{source.label}</span>
+        : <select data-source-select class="border border-[var(--color-line)] rounded px-2 py-1.5 text-sm bg-white"></select>}
+    </div>
+  </div>
+
+  <div data-autofill class="mb-4 flex gap-2 items-end">
+    <div class="flex-1 flex flex-col gap-1">
+      <label class="text-xs font-medium text-[var(--color-muted)]">Quick fill</label>
+      <input data-autofill-input type="text" placeholder="Paste a DOI, ISBN or URL to auto-fill"
+        class="w-full border border-[var(--color-line)] rounded px-2 py-1.5 text-sm bg-white focus:border-[var(--color-brand)] outline-none" />
+    </div>
+    <button data-autofill-btn type="button"
+      class="text-sm bg-[var(--color-accent)] text-white px-3 py-1.5 rounded hover:opacity-90 whitespace-nowrap">Auto-fill</button>
+  </div>
+  <p data-autofill-note class="text-xs text-[var(--color-accent)] mb-3 min-h-[1rem]"></p>
+
+  <form data-form class="grid sm:grid-cols-2 gap-3 mb-4"></form>
+
+  <div data-output class="border-t border-[var(--color-line)] pt-4">
+    <p class="text-sm text-[var(--color-muted)]">Fill the required fields to generate your citation.</p>
+  </div>
+
+  <noscript>
+    <p class="text-sm text-[var(--color-muted)] mt-2">The interactive generator needs JavaScript. The format rules and worked examples below work without it.</p>
+  </noscript>
+</section>
+
+<script>
+  import '../scripts/citation-tool.js';
+</script>

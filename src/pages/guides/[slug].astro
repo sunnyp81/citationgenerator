@@ -1,0 +1,46 @@
+---
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AffiliateCTA from '../../components/AffiliateCTA.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import OptinForm from '../../components/OptinForm.astro';
+import FAQ from '../../components/FAQ.astro';
+import { guides, guideBySlug } from '../../lib/guides.js';
+
+export async function getStaticPaths() {
+  return guides.map((g) => ({ params: { slug: g.slug }, props: { slug: g.slug } }));
+}
+
+const { slug } = Astro.props;
+const g = guideBySlug[slug];
+const jsonld = [
+  { '@context': 'https://schema.org', '@type': 'Article', headline: g.h1 || g.title,
+    description: g.description, datePublished: '2026-06-21', dateModified: '2026-06-21',
+    author: { '@type': 'Organization', name: 'Citation Generator' },
+    publisher: { '@type': 'Organization', name: 'Citation Generator' } },
+  ...(g.faq?.length ? [{ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: g.faq.map((i) => ({ '@type': 'Question', name: i.q, acceptedAnswer: { '@type': 'Answer', text: i.a } })) }] : []),
+];
+---
+<Base title={g.title} description={g.description} jsonld={jsonld}>
+  <div class="mx-auto max-w-3xl px-4 py-8">
+    <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Guides', href: '/how-to-cite' }, { label: g.h1 || g.title }]} />
+    <article class="prose-cg">
+      <h1 class="text-3xl sm:text-4xl font-bold tracking-tight mb-3">{g.h1 || g.title}</h1>
+      {g.lead && <p class="text-lg text-[var(--color-ink)] font-medium" set:html={g.lead} />}
+      <AdSlot slot="mid-content" />
+      <Fragment set:html={g.bodyHtml} />
+      {g.downLinks?.length && (
+        <div class="not-prose my-6 rounded-lg border border-[var(--color-line)] p-4 bg-[var(--color-bg-soft)]">
+          <p class="font-semibold text-[var(--color-ink)] mb-2">Use the free generator</p>
+          <div class="flex flex-wrap gap-2">
+            {g.downLinks.map((l) => <a href={l.href} class="text-sm text-[var(--color-brand)] underline">{l.label}</a>)}
+          </div>
+        </div>
+      )}
+      <AffiliateCTA variant="inline" />
+    </article>
+    <OptinForm magnet="citation-cheat-sheet" />
+    {g.faq?.length && <FAQ items={g.faq} />}
+    <AdSlot slot="footer" />
+  </div>
+</Base>

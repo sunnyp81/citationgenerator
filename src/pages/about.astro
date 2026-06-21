@@ -1,0 +1,34 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import FAQ from '../components/FAQ.astro';
+import { styles } from '../data/styles.js';
+
+const title = 'How Our Citations Are Generated - Accuracy and Sources';
+const description = 'How citationgenerator.store builds citations: the open Citation Style Language standard, the styles we support, and how we keep references accurate.';
+const jsonld = [
+  {
+    '@context': 'https://schema.org', '@type': 'AboutPage', name: 'How citations are generated',
+    url: 'https://citationgenerator.store/about',
+  },
+];
+const faq = [
+  { q: 'How accurate are the citations?', a: 'Citations are formatted from the official Citation Style Language definition of each style, the same standard used by reference managers such as Zotero and Mendeley. The formatting follows the published rules. Accuracy of names, titles and dates depends on the details you enter, so always proofread.' },
+  { q: 'Do you store my references or personal data?', a: 'No. Citations are generated in your browser. Your saved bibliography lives in your browser only and is never uploaded.' },
+];
+---
+<Base title={title} description={description} jsonld={jsonld}>
+  <div class="mx-auto max-w-3xl px-4 py-8 prose-cg">
+    <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'How citations are generated' }]} />
+    <h1 class="text-3xl font-bold tracking-tight mb-4">How our citations are generated</h1>
+    <p>Every citation on this site is produced from the <strong>Citation Style Language</strong> (CSL), the open standard that defines exactly how each citation style formats a reference. CSL is the same definition layer used by academic reference managers including Zotero, Mendeley and Papers, and it is maintained by a community of style editors. When you generate a citation here, your source details are formatted against the official CSL definition for the style you chose, so the punctuation, ordering and capitalisation match the published rules.</p>
+
+    <h2>Styles we support</h2>
+    <p>We currently generate citations in {styles.length} styles: {styles.map((s) => s.label).join(', ')}. Each is backed by its own CSL definition, and editions are tracked where a style has more than one.</p>
+
+    <h2>How we keep references accurate</h2>
+    <p>The formatting logic is not hand written, which removes the most common source of error in citation tools. Instead it is driven by the maintained CSL definition for each style. Auto-fill pulls source data from trusted services: DOIs resolve through CrossRef, ISBNs through Google Books. You stay in control: every field is editable before you copy the citation, and you should always check author names and titles against your source.</p>
+
+    <FAQ items={faq} heading="About this tool" />
+  </div>
+</Base>

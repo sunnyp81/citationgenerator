@@ -1,0 +1,100 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CitationTool from '../components/CitationTool.astro';
+import AffiliateCTA from '../components/AffiliateCTA.astro';
+import AdSlot from '../components/AdSlot.astro';
+import OptinForm from '../components/OptinForm.astro';
+import RelatedSources from '../components/RelatedSources.astro';
+import FAQ from '../components/FAQ.astro';
+import { styles, styleById } from '../data/styles.js';
+import { sourceById } from '../data/sourceTypes.js';
+import { workedExample } from '../lib/examples.js';
+import { getSpokeContent } from '../content/spokeContent.js';
+
+export async function getStaticPaths() {
+  const paths = [];
+  for (const style of styles) {
+    for (const sid of style.sourceTypeIds) {
+      const source = sourceById[sid];
+      paths.push({ params: { source: source.slugFragment, style: style.id }, props: { styleId: style.id, sourceId: sid } });
+    }
+  }
+  return paths;
+}
+
+const { styleId, sourceId } = Astro.props;
+const style = styleById[styleId];
+const source = sourceById[sourceId];
+const example = await workedExample(style, source);
+const c = getSpokeContent(style, source, example);
+
+const title = `How to Cite a ${source.label} in ${style.labelLong} (+ Free Generator)`;
+const description = `Cite a ${source.label.toLowerCase()} in ${style.labelLong} correctly. Step by step format, worked examples, and a free generator that builds the citation for you.`;
+
+const jsonld = [
+  {
+    '@context': 'https://schema.org', '@type': 'HowTo',
+    name: `How to cite a ${source.label.toLowerCase()} in ${style.label}`,
+    step: c.steps.map((s, i) => ({ '@type': 'HowToStep', position: i + 1, name: s.name, text: s.text })),
+  },
+  {
+    '@context': 'https://schema.org', '@type': 'SoftwareApplication',
+    name: `${style.label} ${source.label} Citation Generator`, applicationCategory: 'BrowserApplication',
+    operatingSystem: 'Any', offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  },
+];
+---
+<Base title={title} description={description} jsonld={jsonld}>
+  <div class="mx-auto max-w-3xl px-4 py-8">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: `${style.label} Generator`, href: `/${style.slug}` },
+      { label: `Cite ${source.label.toLowerCase()}` },
+    ]} />
+
+    <h1 class="text-3xl sm:text-4xl font-bold tracking-tight">How to Cite a {source.label} in {style.labelLong}</h1>
+    <p class="text-lg text-[var(--color-ink)] mt-3 mb-6 font-medium" set:html={c.answer} />
+
+    <CitationTool defaultStyleId={style.id} defaultSourceId={source.id} lockStyle={true} lockSource={true} />
+
+    <AffiliateCTA variant="post-citation" />
+
+    <section class="prose-cg mt-8">
+      <h2>How to cite a {source.label.toLowerCase()} in {style.label} step by step</h2>
+      <ol>
+        {c.steps.map((s) => <li><strong>{s.name}.</strong> {s.text}</li>)}
+      </ol>
+    </section>
+
+    <AdSlot slot="mid-content" />
+
+    <section class="mt-8">
+      <h2 class="text-2xl font-bold mb-3">{style.label} {source.label.toLowerCase()} citation format</h2>
+      <p class="text-[var(--color-muted)] mb-4">{c.formatNote}</p>
+      {example && (
+        <div class="rounded-lg border border-[var(--color-line)] p-4">
+          <div class="text-xs uppercase tracking-wide text-[var(--color-muted)] mb-1">Reference list entry</div>
+          <div class="citation-output text-sm" set:html={example.referenceHtml} />
+          <div class="text-xs uppercase tracking-wide text-[var(--color-muted)] mt-3 mb-1">In-text citation</div>
+          <div class="citation-output text-sm" set:html={example.inTextHtml} />
+        </div>
+      )}
+    </section>
+
+    <section class="prose-cg mt-8">
+      <h2>Common {source.label.toLowerCase()} citation variations</h2>
+      {c.variations.map((v) => (<><h3>{v.q}</h3><p>{v.a}</p></>))}
+    </section>
+
+    <OptinForm magnet={`${style.id}-cheat-sheet`} label={`Get the free ${style.label} cheat sheet`} />
+
+    <RelatedSources styleId={style.id} currentSourceId={source.id} />
+
+    <p class="mt-8"><a href={`/${style.slug}`} class="text-[var(--color-brand)] font-medium">See the full {style.labelLong} citation generator and every source type &rarr;</a></p>
+
+    <FAQ items={c.faq} heading={`${source.label} citation FAQ`} />
+
+    <AdSlot slot="footer" />
+  </div>
+</Base>

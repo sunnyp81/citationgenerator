@@ -1,0 +1,42 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import AdSlot from '../components/AdSlot.astro';
+import FAQ from '../components/FAQ.astro';
+import { styles } from '../data/styles.js';
+import { sourceTypes } from '../data/sourceTypes.js';
+
+const title = 'How to Cite Any Source - Free Guides and Generators';
+const description = 'Step by step guides for citing books, journal articles, websites, videos, images and ChatGPT in every major style, each with a free generator.';
+const jsonld = [
+  { '@context': 'https://schema.org', '@type': 'CollectionPage', name: 'How to Cite Any Source', url: 'https://citationgenerator.store/how-to-cite' },
+];
+const faq = [
+  { q: 'How do I cite a source?', a: 'Identify your source type and your required style, then list the author, title, date and source details in the order that style sets out. Use the matching generator to format it automatically.' },
+  { q: 'What is the difference between a citation and a reference?', a: 'The in-text citation is the short pointer in your writing. The reference, or reference list entry, is the full source detail at the end of your work. You need both.' },
+];
+---
+<Base title={title} description={description} jsonld={jsonld}>
+  <div class="mx-auto max-w-4xl px-4 py-8">
+    <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'How to cite' }]} />
+    <h1 class="text-3xl sm:text-4xl font-bold tracking-tight">How to Cite Any Source</h1>
+    <p class="text-lg text-[var(--color-muted)] mt-2 mb-6">Choose a source type and a style. Each guide gives you the format, worked examples and a free generator.</p>
+
+    {sourceTypes.map((src) => (
+      <section class="mt-8">
+        <h2 class="text-2xl font-bold mb-3">How to cite {src.label.toLowerCase()}</h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
+          {styles.filter((s) => s.sourceTypeIds.includes(src.id)).map((s) => (
+            <a href={`/how-to-cite-${src.slugFragment}-in-${s.id}`} class="text-sm rounded border border-[var(--color-line)] px-3 py-2 hover:border-[var(--color-brand)] hover:bg-[var(--color-brand-soft)]">
+              Cite {src.label.toLowerCase()} in {s.label}
+            </a>
+          ))}
+        </div>
+      </section>
+    ))}
+
+    <AdSlot slot="mid-content" />
+    <FAQ items={faq} heading="Citation basics" />
+    <AdSlot slot="footer" />
+  </div>
+</Base>

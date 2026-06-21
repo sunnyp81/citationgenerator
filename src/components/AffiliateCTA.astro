@@ -1,0 +1,24 @@
+---
+// Contextual affiliate block. Variant maps intent to offer. Links are placeholders
+// (cg_aff) until programs are approved; swap the href centrally here.
+interface Props { variant: 'post-citation' | 'inline' | 'post-action'; }
+const { variant } = Astro.props;
+const AFF = {
+  grammarly: 'https://www.grammarly.com/?cg_aff=pending',
+  quetext: 'https://www.quetext.com/?cg_aff=pending',
+};
+const copy = {
+  'post-citation': { lead: 'Before you submit', body: 'Run your paper through a plagiarism and grammar check so your citations and writing are clean.', cta: 'Check my paper', href: AFF.grammarly },
+  'post-action': { lead: 'Polish your writing', body: 'Catch grammar slips and accidental plagiarism before you hand in.', cta: 'Try Grammarly free', href: AFF.grammarly },
+  'inline': { lead: 'Tip', body: 'A grammar and plagiarism checker catches the mistakes a citation tool cannot.', cta: 'Check your work', href: AFF.grammarly },
+};
+const c = copy[variant];
+---
+<aside class="my-6 rounded-lg border border-[var(--color-brand-soft)] bg-[var(--color-brand-soft)] p-4 flex flex-wrap items-center gap-3">
+  <div class="flex-1 min-w-[200px]">
+    <p class="font-semibold text-[var(--color-brand-dark)] text-sm">{c.lead}</p>
+    <p class="text-sm text-[var(--color-muted)]">{c.body}</p>
+  </div>
+  <a href={c.href} rel="sponsored nofollow" target="_blank"
+    class="text-sm bg-[var(--color-brand)] text-white px-4 py-2 rounded hover:bg-[var(--color-brand-dark)] whitespace-nowrap">{c.cta}</a>
+</aside>

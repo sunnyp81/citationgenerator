@@ -1,0 +1,37 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CitationTool from '../components/CitationTool.astro';
+import AffiliateCTA from '../components/AffiliateCTA.astro';
+import AdSlot from '../components/AdSlot.astro';
+import FAQ from '../components/FAQ.astro';
+
+const title = 'In-text Citation Generator - Free, Every Style';
+const description = 'Generate accurate in-text and parenthetical citations in any style. The generator shows the in-text citation alongside the full reference. Free, no sign up.';
+const jsonld = [
+  { '@context': 'https://schema.org', '@type': 'SoftwareApplication', name: 'In-text Citation Generator', applicationCategory: 'BrowserApplication', operatingSystem: 'Any', offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' } },
+];
+const faq = [
+  { q: 'What is an in-text citation?', a: 'An in-text citation is the short pointer you place in the body of your writing, next to the idea or quote you borrowed. It sends readers to the full entry in your reference list.' },
+  { q: 'What is the difference between in-text and parenthetical citation?', a: 'A parenthetical citation is one kind of in-text citation, placed in brackets. A narrative citation names the author in the sentence instead. The generator gives the form your style uses.' },
+];
+---
+<Base title={title} description={description} jsonld={jsonld}>
+  <div class="mx-auto max-w-3xl px-4 py-8">
+    <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Tools', href: '/tools' }, { label: 'In-text Citation Generator' }]} />
+    <h1 class="text-3xl font-bold tracking-tight">In-text Citation Generator</h1>
+    <p class="text-lg text-[var(--color-muted)] mt-2 mb-6">Generate the in-text or parenthetical citation in any style. Enter your source once and copy the short form for your sentence, plus the full reference.</p>
+
+    <CitationTool defaultStyleId="ama" />
+    <AffiliateCTA variant="post-action" />
+
+    <section class="prose-cg mt-8">
+      <h2>How in-text citations work</h2>
+      <p>Each time you use a source in your writing, you place a short in-text citation next to it. The exact form depends on your style: some use a number, some the author and year. The generator above shows the correct in-text citation for your style next to the full reference, so the two always match.</p>
+    </section>
+
+    <AdSlot slot="mid-content" />
+    <FAQ items={faq} heading="In-text citation FAQ" />
+    <AdSlot slot="footer" />
+  </div>
+</Base>

@@ -1,0 +1,59 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import AffiliateCTA from '../components/AffiliateCTA.astro';
+import AdSlot from '../components/AdSlot.astro';
+import FAQ from '../components/FAQ.astro';
+import { styles } from '../data/styles.js';
+import { sourceTypes } from '../data/sourceTypes.js';
+
+const title = 'Free Citation Generators for Every Style - AMA, IEEE, Harvard and More';
+const description = `Free citation generators for ${styles.length} styles and ${sourceTypes.length} source types. Accurate references and in-text citations, built on the open Citation Style Language standard. No sign up.`;
+const jsonld = [
+  {
+    '@context': 'https://schema.org', '@type': 'CollectionPage', name: 'Citation Generators by Style',
+    url: 'https://citationgenerator.store/citation-generators',
+  },
+  {
+    '@context': 'https://schema.org', '@type': 'ItemList',
+    itemListElement: styles.map((s, i) => ({ '@type': 'ListItem', position: i + 1, name: `${s.labelLong} Citation Generator`, url: `https://citationgenerator.store/${s.slug}` })),
+  },
+];
+const faq = [
+  { q: 'Which citation style should I use?', a: 'Use the style your department or journal requires. AMA and Vancouver suit medicine, IEEE engineering, ACS chemistry, ASA sociology, APSA political science, MLA the humanities, APA the social sciences, and Chicago or Turabian history and general academic writing.' },
+  { q: 'Are these citation generators really free?', a: 'Yes. Every style, every source type, no account, no limit.' },
+];
+---
+<Base title={title} description={description} jsonld={jsonld}>
+  <div class="mx-auto max-w-4xl px-4 py-8">
+    <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Citation Generators' }]} />
+    <h1 class="text-3xl sm:text-4xl font-bold tracking-tight">Citation Generators by Style</h1>
+    <p class="text-lg text-[var(--color-muted)] mt-2 mb-6">Pick your citation style to generate accurate references and in-text citations free. Every generator covers journal articles, books, websites, videos and more.</p>
+
+    <AffiliateCTA variant="inline" />
+
+    <h2 class="text-2xl font-bold mt-8 mb-4">Browse by style</h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+      {styles.map((s) => (
+        <a href={`/${s.slug}`} class="block rounded-lg border border-[var(--color-line)] p-4 hover:border-[var(--color-brand)] hover:bg-[var(--color-brand-soft)]">
+          <span class="font-semibold text-[var(--color-ink)]">{s.labelLong}</span>
+          <span class="block text-sm text-[var(--color-muted)] mt-1">{s.blurb}</span>
+        </a>
+      ))}
+    </div>
+
+    <AdSlot slot="mid-content" />
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">Browse by source type</h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+      {sourceTypes.map((src) => (
+        <a href={`/how-to-cite-${src.slugFragment}-in-ama`} class="block rounded-lg border border-[var(--color-line)] p-3 hover:border-[var(--color-brand)] hover:bg-[var(--color-brand-soft)]">
+          <span class="font-medium text-[var(--color-ink)] text-sm">Cite {src.label.toLowerCase()}</span>
+        </a>
+      ))}
+    </div>
+
+    <FAQ items={faq} heading="Choosing a citation style" />
+    <AdSlot slot="footer" />
+  </div>
+</Base>

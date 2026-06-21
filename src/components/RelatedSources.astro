@@ -1,0 +1,20 @@
+---
+import { sourceTypes } from '../data/sourceTypes.js';
+import { styleById } from '../data/styles.js';
+interface Props { styleId: string; currentSourceId?: string; heading?: string; }
+const { styleId, currentSourceId, heading } = Astro.props;
+const style = styleById[styleId];
+const sources = sourceTypes.filter((s) => style.sourceTypeIds.includes(s.id) && s.id !== currentSourceId);
+---
+<section class="mt-10">
+  <h2 class="text-2xl font-bold mb-4">{heading || `Cite any source in ${style.label}`}</h2>
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+    {sources.map((src) => (
+      <a href={`/how-to-cite-${src.slugFragment}-in-${style.id}`}
+        class="block rounded-lg border border-[var(--color-line)] p-3 hover:border-[var(--color-brand)] hover:bg-[var(--color-brand-soft)]">
+        <span class="font-semibold text-[var(--color-ink)]">Cite {src.label.toLowerCase()}</span>
+        <span class="block text-xs text-[var(--color-muted)] mt-1">{src.blurb}</span>
+      </a>
+    ))}
+  </div>
+</section>

@@ -1,0 +1,65 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  jsonld?: object[];
+}
+
+const { title, description, canonical, jsonld = [] } = Astro.props;
+const canonicalUrl = canonical ?? new URL(Astro.url.pathname, Astro.site).href;
+const year = 2026; // build-time constant; never rendered into slugs
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta name="twitter:card" content="summary" />
+    {jsonld.map((block) => (
+      <script type="application/ld+json" set:html={JSON.stringify(block)} />
+    ))}
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <header class="border-b border-[var(--color-line)] bg-white sticky top-0 z-40">
+      <div class="mx-auto max-w-5xl px-4 h-14 flex items-center justify-between">
+        <a href="/" class="font-bold text-lg text-[var(--color-ink)]">
+          citation<span class="text-[var(--color-brand)]">generator</span>
+        </a>
+        <nav class="flex gap-5 text-sm font-medium text-[var(--color-muted)]">
+          <a href="/citation-generators" class="hover:text-[var(--color-brand)]">Styles</a>
+          <a href="/how-to-cite" class="hover:text-[var(--color-brand)]">How to cite</a>
+          <a href="/tools" class="hover:text-[var(--color-brand)]">Tools</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="flex-1">
+      <slot />
+    </main>
+
+    <footer class="border-t border-[var(--color-line)] bg-[var(--color-bg-soft)] mt-16">
+      <div class="mx-auto max-w-5xl px-4 py-10 text-sm text-[var(--color-muted)]">
+        <div class="flex flex-wrap gap-x-8 gap-y-2 mb-6">
+          <a href="/citation-generators" class="hover:text-[var(--color-brand)]">All citation styles</a>
+          <a href="/how-to-cite" class="hover:text-[var(--color-brand)]">Citation guides</a>
+          <a href="/tools" class="hover:text-[var(--color-brand)]">Free tools</a>
+          <a href="/about" class="hover:text-[var(--color-brand)]">How citations are generated</a>
+        </div>
+        <p>Free citation generator. Accurate references in every major style, built on open Citation Style Language standards. No sign up.</p>
+        <p class="mt-2">&copy; {year} citationgenerator.store</p>
+      </div>
+    </footer>
+  </body>
+</html>

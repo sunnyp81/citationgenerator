@@ -1,0 +1,11 @@
+---
+// Ezoic placeholder. Below the tool fold only. Real ad id wired post-launch when Ezoic is live.
+interface Props { slot: 'mid-content' | 'footer'; }
+const { slot } = Astro.props;
+const ezoicId = slot === 'mid-content' ? 101 : 102;
+---
+<div class="my-6" data-ad-slot={slot}>
+  <div id={`ezoic-pub-ad-placeholder-${ezoicId}`} class="min-h-[90px] flex items-center justify-center text-xs text-[var(--color-line)] border border-dashed border-[var(--color-line)] rounded">
+    <!-- Ezoic ad placeholder -->
+  </div>
+</div>

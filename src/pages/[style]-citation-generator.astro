@@ -1,0 +1,97 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CitationTool from '../components/CitationTool.astro';
+import BibliographyPanel from '../components/BibliographyPanel.astro';
+import AffiliateCTA from '../components/AffiliateCTA.astro';
+import AdSlot from '../components/AdSlot.astro';
+import OptinForm from '../components/OptinForm.astro';
+import RelatedSources from '../components/RelatedSources.astro';
+import RelatedStyles from '../components/RelatedStyles.astro';
+import FAQ from '../components/FAQ.astro';
+import { styles, styleById } from '../data/styles.js';
+import { sourceById } from '../data/sourceTypes.js';
+import { workedExamplesForStyle } from '../lib/examples.js';
+import { getStyleContent } from '../content/styleContent.js';
+
+export async function getStaticPaths() {
+  return styles.map((s) => ({ params: { style: s.id }, props: { styleId: s.id } }));
+}
+
+const { styleId } = Astro.props;
+const style = styleById[styleId];
+const sources = style.sourceTypeIds.map((id) => sourceById[id]);
+const examples = await workedExamplesForStyle(style, sources);
+const content = getStyleContent(styleId); // editorial copy + FAQ (from content layer)
+
+const title = `${style.labelLong} Citation Generator - Free, Accurate, No Sign-up`;
+const description = `Generate accurate ${style.labelLong} citations and references free. Paste a DOI, ISBN or URL or fill the form, copy the citation, and build your bibliography. No login.`;
+
+const jsonld = [
+  {
+    '@context': 'https://schema.org', '@type': 'SoftwareApplication',
+    name: `${style.labelLong} Citation Generator`, applicationCategory: 'BrowserApplication',
+    operatingSystem: 'Any', offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+    featureList: sources.map((s) => `Cite ${s.label.toLowerCase()}`),
+    url: new URL(`/${style.slug}`, Astro.site).href,
+  },
+];
+---
+<Base title={title} description={description} jsonld={jsonld}>
+  <div class="mx-auto max-w-3xl px-4 py-8">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Citation Generators', href: '/citation-generators' },
+      { label: style.label },
+    ]} />
+
+    <h1 class="text-3xl sm:text-4xl font-bold tracking-tight">{style.labelLong} Citation Generator</h1>
+    <p class="text-lg text-[var(--color-muted)] mt-2 mb-6">{content.subhead}</p>
+
+    <CitationTool defaultStyleId={style.id} lockStyle={true} />
+    <BibliographyPanel />
+
+    <AffiliateCTA variant="post-citation" />
+
+    <div class="prose-cg mt-8">
+      <Fragment set:html={content.intro} />
+
+      <h2>How to use the {style.label} citation generator</h2>
+      <ol>
+        <li>Pick your source type, a journal article, book, website or video.</li>
+        <li>Paste a DOI, ISBN or URL to auto-fill, or type the details into the form.</li>
+        <li>Copy the formatted reference and in-text citation, or add it to your bibliography.</li>
+      </ol>
+    </div>
+
+    <AdSlot slot="mid-content" />
+
+    <div class="prose-cg">
+      <Fragment set:html={content.formatOverview} />
+    </div>
+
+    <section class="mt-8">
+      <h2 class="text-2xl font-bold mb-4">{style.label} examples by source type</h2>
+      <div class="space-y-4">
+        {examples.map((ex) => (
+          <div class="rounded-lg border border-[var(--color-line)] p-4">
+            <h3 class="font-semibold text-[var(--color-ink)] mb-2">
+              <a href={`/how-to-cite-${ex.source.slugFragment}-in-${style.id}`} class="hover:text-[var(--color-brand)]">{style.label} {ex.source.label.toLowerCase()} citation</a>
+            </h3>
+            <div class="citation-output text-sm text-[var(--color-muted)]" set:html={ex.referenceHtml} />
+            <p class="text-xs text-[var(--color-muted)] mt-2">In-text: <span set:html={ex.inTextHtml} /></p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <OptinForm magnet={`${style.id}-cheat-sheet`} label={`Get the free ${style.label} cheat sheet`} />
+
+    <RelatedSources styleId={style.id} />
+    <RelatedStyles currentId={style.id} />
+
+    <FAQ items={content.faq} heading={`${style.label} citation FAQ`} />
+
+    <AdSlot slot="footer" />
+  </div>
+</Base>

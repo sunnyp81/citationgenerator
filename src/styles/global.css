@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+/* Design tokens — light, academic, trustworthy. No dashes in content anywhere. */
+@theme {
+  --color-ink: #0f172a;        /* slate-900 text */
+  --color-muted: #475569;      /* slate-600 */
+  --color-line: #e2e8f0;       /* slate-200 borders */
+  --color-bg: #ffffff;
+  --color-bg-soft: #f8fafc;    /* slate-50 panels */
+  --color-brand: #1d4ed8;      /* blue-700 accent */
+  --color-brand-dark: #1e3a8a; /* blue-900 */
+  --color-brand-soft: #eff6ff; /* blue-50 */
+  --color-accent: #0d9488;     /* teal-600 secondary */
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
+}
+
+html { scroll-behavior: smooth; }
+body { color: var(--color-ink); background: var(--color-bg); font-family: var(--font-sans); }
+
+/* The rendered citation block — hanging indent, monospace-ish readability */
+.citation-output {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  padding-left: 2rem;
+  text-indent: -2rem;
+  word-break: break-word;
+}
+
+/* Prose defaults for informational content */
+.prose-cg h2 { font-size: 1.5rem; font-weight: 700; margin-top: 2rem; margin-bottom: 0.75rem; color: var(--color-ink); }
+.prose-cg h3 { font-size: 1.2rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+.prose-cg p { margin-bottom: 1rem; color: var(--color-muted); line-height: 1.7; }
+.prose-cg ul, .prose-cg ol { margin: 0 0 1rem 1.25rem; color: var(--color-muted); }
+.prose-cg li { margin-bottom: 0.4rem; }
+.prose-cg a { color: var(--color-brand); text-decoration: underline; text-underline-offset: 2px; }

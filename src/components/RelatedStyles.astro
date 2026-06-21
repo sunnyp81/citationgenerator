@@ -1,0 +1,22 @@
+---
+import { styles } from '../data/styles.js';
+interface Props { currentId: string; heading?: string; }
+const { currentId, heading = 'Other citation styles' } = Astro.props;
+// same tier first, then fill, exclude current
+const current = styles.find((s) => s.id === currentId);
+const ordered = styles
+  .filter((s) => s.id !== currentId)
+  .sort((a, b) => (a.tier - b.tier) || (b.volume - a.volume))
+  .slice(0, 8);
+---
+<section class="mt-10">
+  <h2 class="text-2xl font-bold mb-4">{heading}</h2>
+  <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+    {ordered.map((s) => (
+      <a href={`/${s.slug}`} class="block rounded-lg border border-[var(--color-line)] p-3 hover:border-[var(--color-brand)] hover:bg-[var(--color-brand-soft)]">
+        <span class="font-semibold text-[var(--color-ink)]">{s.label}</span>
+        <span class="block text-xs text-[var(--color-muted)] mt-1">{s.blurb}</span>
+      </a>
+    ))}
+  </div>
+</section>
