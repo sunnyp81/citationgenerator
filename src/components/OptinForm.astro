@@ -7,7 +7,7 @@ const { magnet, label = 'Get the free citation cheat sheet' } = Astro.props;
 ---
 <aside class="my-8 rounded-xl bg-[var(--color-ink)] text-white p-6">
   <h2 class="text-xl font-bold mb-1">{label}</h2>
-  <p class="text-sm text-slate-300 mb-4">A one page quick reference you can keep beside your work. No spam, unsubscribe any time.</p>
+  <p class="text-sm text-slate-300 mb-4">One page covering in-text citations, reference list format, and the rules for authors, dates and page numbers. Keep it beside your work. No spam, unsubscribe any time.</p>
   <form class="flex flex-wrap gap-2" data-optin action={OPTIN_ENDPOINT} method="post">
     <input type="hidden" name="magnet" value={magnet} />
     <input type="hidden" name="_site" value="citationgenerator.store" />

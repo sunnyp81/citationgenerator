@@ -5,6 +5,7 @@ import AdSlot from '../components/AdSlot.astro';
 import FAQ from '../components/FAQ.astro';
 import { styles } from '../data/styles.js';
 import { sourceTypes } from '../data/sourceTypes.js';
+import { guides } from '../lib/guides.js';
 
 const title = 'How to Cite Any Source - Free Guides and Generators';
 const description = 'Step by step guides for citing books, journal articles, websites, videos, images and ChatGPT in every major style, each with a free generator.';
@@ -21,6 +22,15 @@ const faq = [
     <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'How to cite' }]} />
     <h1 class="text-3xl sm:text-4xl font-bold tracking-tight">How to Cite Any Source</h1>
     <p class="text-lg text-[var(--color-muted)] mt-2 mb-6">Choose a source type and a style. Each guide gives you the format, worked examples and a free generator.</p>
+
+    <section class="mt-2 mb-4">
+      <h2 class="text-2xl font-bold mb-3">Citation guides</h2>
+      <ul class="grid sm:grid-cols-2 gap-2">
+        {guides.map((g) => (
+          <li><a href={`/guides/${g.slug}`} class="text-[var(--color-brand)] hover:underline">{g.h1 || g.title}</a></li>
+        ))}
+      </ul>
+    </section>
 
     {sourceTypes.map((src) => (
       <section class="mt-8">

@@ -30,13 +30,14 @@ const source = sourceById[sourceId];
 const example = await workedExample(style, source);
 const c = getSpokeContent(style, source, example);
 
-const title = `How to Cite a ${source.label} in ${style.labelLong} (+ Free Generator)`;
-const description = `Cite a ${source.label.toLowerCase()} in ${style.labelLong} correctly. Step by step format, worked examples, and a free generator that builds the citation for you.`;
+const art = source.slugFragment.startsWith('an-') ? 'an ' : source.slugFragment.startsWith('a-') ? 'a ' : '';
+const title = `How to Cite ${art}${source.label} in ${style.label} (Free Generator)`;
+const description = `Cite ${art}${source.label.toLowerCase()} in ${style.labelLong} correctly. Step by step format, worked examples, and a free generator that builds the citation for you.`;
 
 const jsonld = [
   {
     '@context': 'https://schema.org', '@type': 'HowTo',
-    name: `How to cite a ${source.label.toLowerCase()} in ${style.label}`,
+    name: `How to cite ${art}${source.label.toLowerCase()} in ${style.label}`,
     step: c.steps.map((s, i) => ({ '@type': 'HowToStep', position: i + 1, name: s.name, text: s.text })),
   },
   {
@@ -54,15 +55,13 @@ const jsonld = [
       { label: `Cite ${source.label.toLowerCase()}` },
     ]} />
 
-    <h1 class="text-3xl sm:text-4xl font-bold tracking-tight">How to Cite a {source.label} in {style.labelLong}</h1>
+    <h1 class="text-3xl sm:text-4xl font-bold tracking-tight">How to Cite {art}{source.label} in {style.labelLong}</h1>
     <p class="text-lg text-[var(--color-ink)] mt-3 mb-6 font-medium" set:html={c.answer} />
 
     <CitationTool defaultStyleId={style.id} defaultSourceId={source.id} lockStyle={true} lockSource={true} />
 
-    <AffiliateCTA variant="post-citation" />
-
     <section class="prose-cg mt-8">
-      <h2>How to cite a {source.label.toLowerCase()} in {style.label} step by step</h2>
+      <h2>How to cite {art}{source.label.toLowerCase()} in {style.label} step by step</h2>
       <ol>
         {c.steps.map((s) => <li><strong>{s.name}.</strong> {s.text}</li>)}
       </ol>
@@ -87,6 +86,8 @@ const jsonld = [
       <h2>Common {source.label.toLowerCase()} citation variations</h2>
       {c.variations.map((v) => (<><h3>{v.q}</h3><p>{v.a}</p></>))}
     </section>
+
+    <AffiliateCTA variant="post-citation" />
 
     <OptinForm magnet={`${style.id}-cheat-sheet`} label={`Get the free ${style.label} cheat sheet`} />
 

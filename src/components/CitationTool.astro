@@ -26,13 +26,13 @@ const source = sourceById[defaultSourceId];
       <span class="text-xs font-medium text-[var(--color-muted)]">Citation style</span>
       {lockStyle
         ? <span class="font-semibold text-[var(--color-ink)] py-1.5">{style.labelLong}</span>
-        : <select data-style-select class="border border-[var(--color-line)] rounded px-2 py-1.5 text-sm bg-white"></select>}
+        : <select data-style-select aria-label="Citation style" class="border border-[var(--color-line)] rounded px-2 py-1.5 text-sm bg-white"></select>}
     </div>
     <div class="flex flex-col gap-1">
       <span class="text-xs font-medium text-[var(--color-muted)]">Source type</span>
       {lockSource
         ? <span class="font-semibold text-[var(--color-ink)] py-1.5">{source.label}</span>
-        : <select data-source-select class="border border-[var(--color-line)] rounded px-2 py-1.5 text-sm bg-white"></select>}
+        : <select data-source-select aria-label="Source type" class="border border-[var(--color-line)] rounded px-2 py-1.5 text-sm bg-white"></select>}
     </div>
   </div>
 
@@ -52,6 +52,8 @@ const source = sourceById[defaultSourceId];
   <div data-output class="border-t border-[var(--color-line)] pt-4">
     <p class="text-sm text-[var(--color-muted)]">Fill the required fields to generate your citation.</p>
   </div>
+
+  <p class="text-xs text-[var(--color-muted)] mt-3">No account needed. Your citations stay in your browser and are never uploaded.</p>
 
   <noscript>
     <p class="text-sm text-[var(--color-muted)] mt-2">The interactive generator needs JavaScript. The format rules and worked examples below work without it.</p>

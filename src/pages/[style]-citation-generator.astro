@@ -24,8 +24,8 @@ const sources = style.sourceTypeIds.map((id) => sourceById[id]);
 const examples = await workedExamplesForStyle(style, sources);
 const content = getStyleContent(styleId); // editorial copy + FAQ (from content layer)
 
-const title = `${style.labelLong} Citation Generator - Free, Accurate, No Sign-up`;
-const description = `Generate accurate ${style.labelLong} citations and references free. Paste a DOI, ISBN or URL or fill the form, copy the citation, and build your bibliography. No login.`;
+const title = `${style.label} Citation Generator - Free, Accurate, No Sign-up`;
+const description = `Generate accurate ${style.label} citations and references free. Paste a DOI, ISBN or URL, copy the citation, and build your bibliography. No login.`;
 
 const jsonld = [
   {
@@ -50,8 +50,6 @@ const jsonld = [
 
     <CitationTool defaultStyleId={style.id} lockStyle={true} />
     <BibliographyPanel />
-
-    <AffiliateCTA variant="post-citation" />
 
     <div class="prose-cg mt-8">
       <Fragment set:html={content.intro} />
@@ -84,6 +82,8 @@ const jsonld = [
         ))}
       </div>
     </section>
+
+    <AffiliateCTA variant="post-citation" />
 
     <OptinForm magnet={`${style.id}-cheat-sheet`} label={`Get the free ${style.label} cheat sheet`} />
 

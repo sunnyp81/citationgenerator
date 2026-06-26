@@ -3,9 +3,11 @@
 interface Props { slot: 'mid-content' | 'footer'; }
 const { slot } = Astro.props;
 const ezoicId = slot === 'mid-content' ? 101 : 102;
+// Reserve realistic ad height now so live Ezoic units fill the box instead of shifting layout (CLS).
+const minH = slot === 'mid-content' ? 'min-h-[280px]' : 'min-h-[100px]';
 ---
 <div class="my-6" data-ad-slot={slot}>
-  <div id={`ezoic-pub-ad-placeholder-${ezoicId}`} class="min-h-[90px] flex items-center justify-center text-xs text-[var(--color-line)] border border-dashed border-[var(--color-line)] rounded">
+  <div id={`ezoic-pub-ad-placeholder-${ezoicId}`} class={`${minH} flex items-center justify-center text-xs text-[var(--color-line)] border border-dashed border-[var(--color-line)] rounded`}>
     <!-- Ezoic ad placeholder -->
   </div>
 </div>

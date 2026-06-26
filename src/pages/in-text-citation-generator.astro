@@ -4,6 +4,7 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import CitationTool from '../components/CitationTool.astro';
 import AffiliateCTA from '../components/AffiliateCTA.astro';
 import AdSlot from '../components/AdSlot.astro';
+import OptinForm from '../components/OptinForm.astro';
 import FAQ from '../components/FAQ.astro';
 
 const title = 'In-text Citation Generator - Free, Every Style';
@@ -31,6 +32,7 @@ const faq = [
     </section>
 
     <AdSlot slot="mid-content" />
+    <OptinForm magnet="citation-cheat-sheet" label="Get the free all-styles citation cheat sheet" />
     <FAQ items={faq} heading="In-text citation FAQ" />
     <AdSlot slot="footer" />
   </div>

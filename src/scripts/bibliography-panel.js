@@ -43,14 +43,22 @@ export function initBibliographyPanel(panel) {
     }
   }
 
-  panel.querySelector('[data-bib-copy]').addEventListener('click', () => {
+  function confirmLabel(btn, msg) {
+    const prev = btn.textContent;
+    btn.textContent = msg;
+    setTimeout(() => { btn.textContent = prev; }, 1500);
+  }
+
+  panel.querySelector('[data-bib-copy]').addEventListener('click', (e) => {
     const text = [...list.querySelectorAll('li span')].map((s) => s.textContent).join('\n');
     navigator.clipboard?.writeText(text);
+    confirmLabel(e.currentTarget, 'Copied');
   });
-  panel.querySelector('[data-bib-bibtex]').addEventListener('click', () => {
+  panel.querySelector('[data-bib-bibtex]').addEventListener('click', (e) => {
     const blob = new Blob([toBibTeX(getBibliography())], { type: 'text/plain' });
     const a = document.createElement('a');
     a.href = URL.createObjectURL(blob); a.download = 'references.bib'; a.click();
+    confirmLabel(e.currentTarget, 'Downloaded');
   });
   panel.querySelector('[data-bib-clear]').addEventListener('click', () => { clearBibliography(); paint(); });
 

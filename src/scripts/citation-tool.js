@@ -51,6 +51,18 @@ function toReference(source, values) {
   return ref;
 }
 
+function debounce(fn, ms = 250) {
+  let t;
+  return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), ms); };
+}
+
+// swap a button's label to a confirmation for ~1.5s, then restore
+function confirmLabel(btn, msg = 'Copied') {
+  const prev = btn.textContent;
+  btn.textContent = msg;
+  setTimeout(() => { btn.textContent = prev; }, 1500);
+}
+
 function el(tag, attrs = {}, ...kids) {
   const node = document.createElement(tag);
   for (const [k, v] of Object.entries(attrs)) {
@@ -127,9 +139,9 @@ export function initCitationTool(root) {
         ),
         el('div', { class: 'flex gap-2' },
           el('button', { type: 'button', class: 'text-sm bg-[var(--color-brand)] text-white px-3 py-1.5 rounded hover:bg-[var(--color-brand-dark)]',
-            onclick: () => { navigator.clipboard?.writeText(res.referenceText); } }, 'Copy reference'),
+            onclick: (e) => { navigator.clipboard?.writeText(res.referenceText); confirmLabel(e.currentTarget, 'Copied'); } }, 'Copy reference'),
           el('button', { type: 'button', class: 'text-sm border border-[var(--color-brand)] text-[var(--color-brand)] px-3 py-1.5 rounded hover:bg-[var(--color-brand-soft)]',
-            onclick: () => { addToBibliography({ ref, styleId: activeStyleId }); flash('Added to your bibliography below.'); } }, 'Add to bibliography')
+            onclick: (e) => { addToBibliography({ ref, styleId: activeStyleId }); confirmLabel(e.currentTarget, 'Added below'); } }, 'Add to bibliography')
         )
       );
     } catch (err) {
@@ -168,11 +180,12 @@ export function initCitationTool(root) {
   if (autofillBtn) {
     autofillBtn.addEventListener('click', async () => {
       const id = autofillInput.value.trim();
-      if (!id) return;
+      if (!id || autofillBtn.disabled) return;
+      autofillBtn.disabled = true;
       flash('Looking up...');
       try {
         const ref = await resolveIdentifier(id, sourceById[sourceId]);
-        if (!ref) { flash('Could not find that. Fill the form manually.'); return; }
+        if (!ref) { flash('No match for that DOI, ISBN or URL. Fill the form manually.'); return; }
         // populate form
         form.querySelectorAll('input').forEach((i) => {
           const v = ref[i.name];
@@ -182,10 +195,22 @@ export function initCitationTool(root) {
         flash('Found it. Check the fields and generate.');
         render();
       } catch (e) { flash('Lookup failed. Fill the form manually.'); }
+      finally { autofillBtn.disabled = false; }
     });
   }
 
-  form.addEventListener('input', render);
+  // Warm the citeproc engine + active style CSL on first intent so the first
+  // citation does not pay a cold ~400kb fetch + parse on the interaction.
+  let warmed = false;
+  function warm() {
+    if (warmed) return;
+    warmed = true;
+    ensureEngine().then(({ loadStyleXml }) => loadStyleXml(styleById[activeStyleId].cslFile)).catch(() => {});
+  }
+  form.addEventListener('focusin', warm, { once: true });
+  if ('requestIdleCallback' in window) requestIdleCallback(warm, { timeout: 3000 });
+
+  form.addEventListener('input', debounce(render, 250));
   buildForm();
   setupAutofill();
   render();

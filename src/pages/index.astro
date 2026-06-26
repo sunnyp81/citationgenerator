@@ -2,7 +2,9 @@
 import Base from '../layouts/Base.astro';
 import CitationTool from '../components/CitationTool.astro';
 import BibliographyPanel from '../components/BibliographyPanel.astro';
+import AffiliateCTA from '../components/AffiliateCTA.astro';
 import AdSlot from '../components/AdSlot.astro';
+import OptinForm from '../components/OptinForm.astro';
 import FAQ from '../components/FAQ.astro';
 import { styles, tier1Styles } from '../data/styles.js';
 
@@ -12,7 +14,6 @@ const jsonld = [
   {
     '@context': 'https://schema.org', '@type': 'WebSite',
     name: 'Citation Generator', url: 'https://citationgenerator.store',
-    potentialAction: { '@type': 'SearchAction', target: 'https://citationgenerator.store/citation-generators?q={q}', 'query-input': 'required name=q' },
   },
   {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
@@ -50,6 +51,11 @@ const faq = [
       ))}
     </div>
 
+    <OptinForm magnet="citation-cheat-sheet" label="Get the free all-styles citation cheat sheet" />
+    <AffiliateCTA variant="post-citation" />
+
     <FAQ items={faq} />
+
+    <AdSlot slot="footer" />
   </div>
 </Base>

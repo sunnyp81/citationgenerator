@@ -11,7 +11,19 @@ to a student-writing product. Strategy: win the low-KD niche-style wedge before 
 ## Stack / deploy
 - Astro 5 + Tailwind 4, static. citeproc-js + CSL files (`src/csl/`), all client-side.
 - Deploy: GitHub to Cloudflare Pages. Build `npm run build`, output `dist`, NODE_VERSION=22.
-- Repo: local at `C:\Users\sunny\repos\citationgenerator` (git init done, not yet pushed).
+  CF Pages project `citationgenerator` LIVE (sunnypat81 acct) — bootstrapped via wrangler
+  direct-upload 2026-06-26 (`npx wrangler pages deploy dist --project-name citationgenerator
+  --branch main`). LIVE at https://citationgenerator.pages.dev (200, verified). NOT yet
+  git-connected and NO custom domain — Sunny: connect repo in dashboard + point
+  citationgenerator.store CNAME → citationgenerator.pages.dev (proxied).
+- Repo: `github.com/sunnyp81/citationgenerator` (public), branch `main`, pushed + in sync.
+
+## State (2026-06-26 — pushed, advanced past v1)
+- On GitHub, branch `main`, synced (0 ahead/behind). Commits past v1 build:
+  - Launch-SEO prep: OG image, Organization schema, A-Z hub, 404 noindex (`91409e2`).
+  - Wave-publish gating: spokes noindexed phase 1, sitemap trimmed to 31 core URLs (`7ed1a80`).
+  - Opt-in wired to emailit-worker: AJAX POST + honeypot (`a1ae0de`).
+  - Per-style cheat-sheet PDFs + instant download + autoreply delivery (`6979733`).
 
 ## State (2026-06-21 — built in one session)
 - 121 pages building clean: 14 style hubs, 91 source-type spokes (13 styles x 7 sources),

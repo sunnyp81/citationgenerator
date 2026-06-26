@@ -19,13 +19,21 @@ function innerEntry(html) {
  * @param {string} localeXml en-US locale file contents
  * @returns {{referenceHtml,referenceText,inTextHtml,inTextText}}
  */
+// Cache one engine per style XML so we do not re-parse the (up to 245kb) CSL on every
+// keystroke. The sys closure reads from a mutable `items` slot we swap per render.
+const engineCache = new Map();
+
 export function renderCitation(reference, styleXml, localeXml) {
   const items = { ITEM1: { ...reference, id: 'ITEM1' } };
-  const sys = {
-    retrieveLocale: () => localeXml,
-    retrieveItem: (id) => items[id],
-  };
-  const engine = new CSL.Engine(sys, styleXml);
+  let engine = engineCache.get(styleXml);
+  if (!engine) {
+    engine = new CSL.Engine({
+      retrieveLocale: () => localeXml,
+      retrieveItem: (id) => engine._items[id],
+    }, styleXml);
+    engineCache.set(styleXml, engine);
+  }
+  engine._items = items;
   engine.updateItems(['ITEM1']);
 
   const bib = engine.makeBibliography();

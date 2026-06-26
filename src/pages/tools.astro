@@ -1,6 +1,9 @@
 ---
 import Base from '../layouts/Base.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import AffiliateCTA from '../components/AffiliateCTA.astro';
+import AdSlot from '../components/AdSlot.astro';
+import OptinForm from '../components/OptinForm.astro';
 import FAQ from '../components/FAQ.astro';
 
 const title = 'Free Citation and Reference Tools - No Sign-up';
@@ -29,6 +32,12 @@ const faq = [
         </a>
       ))}
     </div>
+
+    <AffiliateCTA variant="inline" />
+    <AdSlot slot="mid-content" />
+    <OptinForm magnet="citation-cheat-sheet" label="Get the free all-styles citation cheat sheet" />
+
     <FAQ items={faq} heading="About these tools" />
+    <AdSlot slot="footer" />
   </div>
 </Base>

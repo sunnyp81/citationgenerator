@@ -5,6 +5,7 @@ import CitationTool from '../components/CitationTool.astro';
 import BibliographyPanel from '../components/BibliographyPanel.astro';
 import AffiliateCTA from '../components/AffiliateCTA.astro';
 import AdSlot from '../components/AdSlot.astro';
+import OptinForm from '../components/OptinForm.astro';
 import FAQ from '../components/FAQ.astro';
 import { styles } from '../data/styles.js';
 
@@ -41,6 +42,7 @@ const faq = [
     </section>
 
     <AdSlot slot="mid-content" />
+    <OptinForm magnet="citation-cheat-sheet" label="Get the free all-styles citation cheat sheet" />
     <FAQ items={faq} heading="Bibliography builder FAQ" />
     <AdSlot slot="footer" />
   </div>
