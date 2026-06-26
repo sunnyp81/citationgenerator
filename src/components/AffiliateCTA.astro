@@ -1,12 +1,13 @@
 ---
-// Contextual affiliate block. Variant maps intent to offer. Links are placeholders
-// (cg_aff) until programs are approved; swap the href centrally here.
+// Contextual partner block. Variant maps intent to offer. In demand-test mode
+// (AFFILIATE_LIVE=false) the buttons point at plain homepage URLs and only fire a GA
+// outbound-click event, so we measure demand before joining any affiliate program.
+import { AFFILIATE_LIVE } from '../config/site.js';
 interface Props { variant: 'post-citation' | 'inline' | 'post-action' | 'plagiarism'; }
 const { variant } = Astro.props;
-const AFF = {
-  grammarly: 'https://www.grammarly.com/?cg_aff=pending',
-  quetext: 'https://www.quetext.com/?cg_aff=pending',
-};
+const AFF = AFFILIATE_LIVE
+  ? { grammarly: 'https://www.grammarly.com/?cg_aff=pending', quetext: 'https://www.quetext.com/?cg_aff=pending' }
+  : { grammarly: 'https://www.grammarly.com/', quetext: 'https://www.quetext.com/' };
 const copy = {
   'post-citation': { lead: 'Before you submit', body: 'A citation formats your source. It does not check whether your wording is too close to it. Scan your draft so nothing slips through.', cta: 'Check for plagiarism', href: AFF.quetext, partner: 'Quetext' },
   'plagiarism': { lead: 'Worried about accidental plagiarism?', body: 'Run your draft through a plagiarism check before you hand in, so paraphrased passages are properly cited.', cta: 'Run a plagiarism check', href: AFF.quetext, partner: 'Quetext' },
@@ -14,13 +15,18 @@ const copy = {
   'inline': { lead: 'Tip', body: 'A grammar and plagiarism checker catches the mistakes a citation tool cannot.', cta: 'Check your work', href: AFF.grammarly, partner: 'Grammarly' },
 };
 const c = copy[variant];
+const rel = AFFILIATE_LIVE ? 'sponsored nofollow noopener' : 'nofollow noopener';
+const note = AFFILIATE_LIVE
+  ? `Ad. We may earn a commission if you sign up with ${c.partner}, at no cost to you.`
+  : `We recommend ${c.partner}. Independent suggestion, not a paid link.`;
 ---
 <aside class="my-6 rounded-lg border border-[var(--color-brand-soft)] bg-[var(--color-brand-soft)] p-4 flex flex-wrap items-center gap-3">
   <div class="flex-1 min-w-[200px]">
     <p class="font-semibold text-[var(--color-brand-dark)] text-sm">{c.lead}</p>
     <p class="text-sm text-[var(--color-muted)]">{c.body}</p>
-    <p class="text-[11px] text-[var(--color-muted)] mt-1 opacity-80">Ad. We may earn a commission if you sign up with {c.partner}, at no cost to you.</p>
+    <p class="text-[11px] text-[var(--color-muted)] mt-1 opacity-80">{note}</p>
   </div>
-  <a href={c.href} rel="sponsored nofollow" target="_blank"
+  <a href={c.href} rel={rel} target="_blank"
+    data-aff={c.partner} data-aff-placement={variant}
     class="text-sm bg-[var(--color-brand)] text-white px-4 py-2 rounded hover:bg-[var(--color-brand-dark)] whitespace-nowrap">{c.cta}</a>
 </aside>

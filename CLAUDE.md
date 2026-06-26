@@ -18,6 +18,24 @@ to a student-writing product. Strategy: win the low-KD niche-style wedge before 
   citationgenerator.store CNAME → citationgenerator.pages.dev (proxied).
 - Repo: `github.com/sunnyp81/citationgenerator` (public), branch `main`, pushed + in sync.
 
+## Optimisation pass (2026-06-26 — 4-axis audit, applied + deployed `1720799`)
+4 parallel audit agents (SEO/AEO, monetisation, performance, conversion). Applied + LIVE:
+- SEO: hub titles now lead with short style label (APA 92->51 chars), shorter metas; fixed
+  spoke a/an grammar; surfaced the 10 orphaned guides on `/how-to-cite` (were only linked
+  from /all-pages); dropped dead WebSite SearchAction.
+- Monetisation: AffiliateCTA gained Quetext `plagiarism` variant + per-block FTC/ASA
+  disclosure + footer disclosure; post-citation CTA now Quetext (plagiarism intent) and
+  relocated BELOW delivered value on hub/spoke; added OptinForm capture to homepage, tools,
+  citation-generators, bibliography-builder, in-text-citation-generator (were zero-capture).
+- Perf: memoized citeproc Engine per style in `lib/engine.js` (was `new CSL.Engine` every
+  keystroke — big INP win; also cut build 43s->6s); debounced tool input 250ms; warm engine
+  on first focus/idle; CLS-safe ad heights (mid 280px/footer 100px); Astro viewport prefetch.
+- UX: copy/add-to-bib confirmation labels, autofill button disables during lookup, trust
+  microcopy under tool, aria-labels on style/source selects, sharper opt-in value prop.
+Build clean 123 pages, pushed `main`, deployed CF Pages (verified 200 + disclosure live).
+NOT yet done (need Sunny/external): real affiliate IDs (still `cg_aff=pending`), Ezoic ids,
+worker CORS must allow the live origin or opt-ins silently drop, git-connect + custom domain.
+
 ## State (2026-06-26 — pushed, advanced past v1)
 - On GitHub, branch `main`, synced (0 ahead/behind). Commits past v1 build:
   - Launch-SEO prep: OG image, Organization schema, A-Z hub, 404 noindex (`91409e2`).

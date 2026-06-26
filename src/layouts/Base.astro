@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { GA_MEASUREMENT_ID, AFFILIATE_LIVE } from '../config/site.js';
 
 interface Props {
   title: string;
@@ -47,6 +48,12 @@ const orgSchema = {
     {jsonld.map((block) => (
       <script type="application/ld+json" set:html={JSON.stringify(block)} />
     ))}
+    {GA_MEASUREMENT_ID && (
+      <Fragment>
+        <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}></script>
+        <script is:inline set:html={`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_MEASUREMENT_ID}');`}></script>
+      </Fragment>
+    )}
   </head>
   <body class="min-h-screen flex flex-col">
     <header class="border-b border-[var(--color-line)] bg-white sticky top-0 z-40">
@@ -76,9 +83,24 @@ const orgSchema = {
           <a href="/all-pages" class="hover:text-[var(--color-brand)]">All pages</a>
         </div>
         <p>Free citation generator. Accurate references in every major style, built on open Citation Style Language standards. No sign up.</p>
-        <p class="mt-2">Some links on this site are affiliate links. If you buy through them we may earn a commission, at no extra cost to you. This never affects which tools we recommend.</p>
+        {AFFILIATE_LIVE && <p class="mt-2">Some links on this site are affiliate links. If you buy through them we may earn a commission, at no extra cost to you. This never affects which tools we recommend.</p>}
         <p class="mt-2">&copy; {year} citationgenerator.store</p>
       </div>
     </footer>
+
+    <!-- Outbound partner-click tracking: fires a GA4 event so we can measure demand for
+         Grammarly/Quetext before committing to affiliate links. No-op until GA id is set. -->
+    <script is:inline>
+      document.addEventListener('click', (e) => {
+        const a = e.target.closest && e.target.closest('[data-aff]');
+        if (!a || typeof gtag !== 'function') return;
+        gtag('event', 'affiliate_click', {
+          partner: a.dataset.aff,
+          placement: a.dataset.affPlacement || '',
+          page_path: location.pathname,
+          transport_type: 'beacon',
+        });
+      });
+    </script>
   </body>
 </html>
